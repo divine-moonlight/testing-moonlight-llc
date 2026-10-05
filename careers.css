@@ -91,3 +91,69 @@
   .final-apply { padding:30px; }
   .final-apply h3 { font-size:2.2rem; }
 }
+
+
+/* Careers contrast and readability fixes */
+.careers-page .careers-heading > p,
+.careers-page .careers-copy p,
+.careers-page .value-card p,
+.careers-page .apply-step p,
+.careers-page .position-card p,
+.careers-page .application-note p {
+  color: #53695f;
+}
+
+.careers-page .careers-intro h2,
+.careers-page .careers-heading h2,
+.careers-page .position-card h3,
+.careers-page .value-card h3,
+.careers-page .apply-step h3,
+.careers-page .application-note h3 {
+  color: #2f4d42;
+}
+
+.careers-page .eyebrow,
+.careers-page .position-label,
+.careers-page .value-card > span,
+.careers-page .apply-step > span {
+  color: #9a7540;
+}
+
+.careers-page .position-details {
+  color: #40594f;
+}
+
+.careers-page .featured-position {
+  background: #edf1eb;
+}
+
+.careers-page .application-note {
+  background: #e7ede7;
+  border: 1px solid rgba(47,77,66,.10);
+}
+
+.careers-page .application-note .eyebrow {
+  color: #8a6736;
+}
+
+.careers-page .position-apply {
+  color: #2f4d42;
+  border-color: #2f4d42;
+}
+
+.careers-page .position-apply:hover {
+  color: #fffdf7;
+  background: #2f4d42;
+}
+
+.careers-page .careers-text-link {
+  text-shadow: 0 1px 12px rgba(0,0,0,.2);
+}
+
+@media (max-width: 600px) {
+  .careers-page .application-note .btn-primary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
