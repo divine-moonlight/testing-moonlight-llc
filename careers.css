@@ -751,3 +751,124 @@
     width: 100%;
   }
 }
+
+
+/* ---------- softer editorial finish ---------- */
+
+.careers-page .careers-hero {
+  min-height: 620px;
+}
+
+.careers-page .careers-hero-content {
+  padding-top: 105px;
+  padding-bottom: 90px;
+}
+
+.careers-page .careers-hero h1 {
+  max-width: 760px;
+  font-size: clamp(62px, 7.2vw, 100px);
+  line-height: .9;
+}
+
+.careers-page .careers-intro,
+.careers-page .careers-values,
+.careers-page .open-positions,
+.careers-page .how-to-apply {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.careers-page .careers-intro-grid {
+  gap: 90px;
+}
+
+.careers-page .value-grid {
+  border: 0;
+  gap: 1px;
+  background: rgba(42,79,68,.14);
+}
+
+.careers-page .value-card {
+  min-height: 250px;
+  border: 0;
+  background: #e9eee9;
+  padding: 34px;
+}
+
+.careers-page .value-card > span {
+  margin-bottom: 48px;
+}
+
+.careers-page .position-list {
+  border-top: 0;
+}
+
+.careers-page .position-card {
+  padding: 48px 0;
+}
+
+.careers-page .position-card:hover {
+  background: transparent;
+}
+
+.careers-page .featured-position {
+  margin: 0;
+  padding: 48px 30px;
+  background: #edf1ec;
+}
+
+.careers-page .application-note {
+  margin-top: 42px;
+  padding: 30px 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--careers-line);
+  border-bottom: 1px solid var(--careers-line);
+}
+
+.careers-page .careers-feature {
+  min-height: 540px;
+}
+
+.careers-page .careers-feature h2 {
+  max-width: 620px;
+}
+
+.careers-page .final-apply {
+  padding: 38px 42px;
+  border-radius: 0;
+}
+
+@media (max-width: 600px) {
+  .careers-page .careers-hero {
+    min-height: 590px;
+  }
+
+  .careers-page .careers-hero-content {
+    padding-top: 85px;
+  }
+
+  .careers-page .careers-hero h1 {
+    font-size: clamp(52px, 15vw, 72px);
+  }
+
+  .careers-page .careers-intro,
+  .careers-page .careers-values,
+  .careers-page .open-positions,
+  .careers-page .how-to-apply {
+    padding-top: 78px;
+    padding-bottom: 78px;
+  }
+
+  .careers-page .value-card {
+    padding: 28px;
+  }
+
+  .careers-page .featured-position {
+    padding: 35px 20px;
+  }
+
+  .careers-page .application-note {
+    align-items: flex-start;
+  }
+}
