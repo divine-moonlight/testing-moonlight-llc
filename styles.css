@@ -3616,3 +3616,23 @@ main > section.hero:first-of-type .actions .text-link {
     transform: translateY(-28px) !important;
   }
 }
+
+
+/* MOBILE NURSING POOL — real element for reliable placement */
+.mobile-nursing-pool { display: none !important; }
+@media (max-width: 700px) {
+  main > section.hero:first-of-type .mobile-nursing-pool {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 2px !important;
+    text-align: center !important;
+    color: var(--burgundy) !important;
+    font-family: var(--sans) !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: .11em !important;
+    text-transform: uppercase !important;
+  }
+  main > section.hero:first-of-type .hero-copy::after { display: none !important; }
+}
