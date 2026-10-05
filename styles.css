@@ -3636,3 +3636,96 @@ main > section.hero:first-of-type .actions .text-link {
   }
   main > section.hero:first-of-type .hero-copy::after { display: none !important; }
 }
+
+
+/* =========================================================
+   MOBILE HERO — REFINED CTA + IMAGE SPACING
+   ========================================================= */
+@media (max-width: 700px) {
+  main > section.hero:first-of-type {
+    min-height: 960px !important;
+    height: 960px !important;
+    overflow: hidden !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 330px !important;
+    left: 20px !important;
+    right: 20px !important;
+    gap: 15px !important;
+    align-items: center !important;
+    z-index: 8 !important;
+  }
+
+  main > section.hero:first-of-type .mobile-nursing-pool {
+    position: relative !important;
+    display: block !important;
+    width: auto !important;
+    margin: 0 0 2px !important;
+    padding: 0 0 11px !important;
+    color: var(--burgundy) !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: .16em !important;
+    line-height: 1.3 !important;
+  }
+
+  main > section.hero:first-of-type .mobile-nursing-pool::after {
+    content: '' !important;
+    display: block !important;
+    width: 34px !important;
+    height: 1px !important;
+    margin: 10px auto 0 !important;
+    background: var(--gold) !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-primary {
+    width: min(100%, 360px) !important;
+    min-height: 54px !important;
+    border-radius: 999px !important;
+    box-shadow: 0 14px 30px -18px rgba(90,24,48,.65) !important;
+  }
+
+  main > section.hero:first-of-type .actions .text-link {
+    margin-top: 1px !important;
+    padding: 0 0 5px !important;
+    color: var(--sage-dark) !important;
+    border-bottom: 1px solid rgba(42,79,68,.28) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Keep the photo completely below the CTA area. */
+  main > section.hero:first-of-type .hero-image {
+    top: 505px !important;
+    bottom: auto !important;
+    height: 455px !important;
+    z-index: 0 !important;
+  }
+
+  main > section.hero:first-of-type .hero-image img {
+    object-position: center 42% !important;
+    transform: scale(1.04) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type {
+    min-height: 920px !important;
+    height: 920px !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 305px !important;
+  }
+
+  main > section.hero:first-of-type .mobile-nursing-pool {
+    font-size: 8.5px !important;
+    letter-spacing: .14em !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    top: 475px !important;
+    height: 445px !important;
+  }
+}
