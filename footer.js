@@ -1,6 +1,6 @@
 /* =========================================================
    DIVINE MOONLIGHT — SHARED FOOTER
-   One injected footer keeps contact details, branding, and links
+   One injected footer keeps contact details and branding
    consistent across every page.
    ========================================================= */
 
@@ -26,11 +26,11 @@
           <div class="footer-title">Explore</div>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="mission.html">About Us</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </div>
 
@@ -39,8 +39,7 @@
           <ul>
             <li><a href="${inquiryUrl}">General Inquiry</a></li>
             <li><a href="${requestCareUrl}">Request Care</a></li>
-            <li><a href="reviews.html">Leave a Review</a></li>
-            <li><a href="careers.html">Apply for a position</a></li>
+            <li><a href="index.html#testimonials">Leave a Review</a></li>
           </ul>
         </div>
 
@@ -57,19 +56,24 @@
 
       <div class="container copyright">
         <span>&copy; 2026 Divine Moonlight Home Service LLC. All rights reserved.</span>
-        <span><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a></span>
       </div>
     </footer>
   `;
 
   function injectFooter() {
-    document.querySelectorAll(".footer").forEach(footer => footer.remove());
+    const existingFooters = document.querySelectorAll(".footer");
+    existingFooters.forEach(footer => footer.remove());
 
-    const wrapper = document.createElement("div");
-    wrapper.id = "shared-site-footer";
-    wrapper.innerHTML = footerMarkup;
+    // Reuse the page's existing mount point. This avoids duplicate IDs
+    // and keeps the footer exactly where the page expects it.
+    let mount = document.getElementById("shared-site-footer");
+    if (!mount) {
+      mount = document.createElement("div");
+      mount.id = "shared-site-footer";
+      document.body.appendChild(mount);
+    }
 
-    document.body.appendChild(wrapper);
+    mount.innerHTML = footerMarkup;
   }
 
   if (document.readyState === "loading") {
