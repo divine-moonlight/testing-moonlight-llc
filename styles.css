@@ -3761,9 +3761,9 @@ main > section.hero:first-of-type .actions .text-link {
   max-height: 92px;
   object-fit: contain;
   object-position: left center;
-  background: var(--paper);
-  padding: 7px;
-  border-radius: 6px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .footer-description {
