@@ -30,6 +30,7 @@
             <li><a href="mission.html">Our Mission</a></li>
             <li><a href="index.html#about">About Us</a></li>
             <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="careers.html">Work With Us</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </div>
