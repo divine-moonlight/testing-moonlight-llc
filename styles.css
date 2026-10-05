@@ -3729,3 +3729,130 @@ main > section.hero:first-of-type .actions .text-link {
     height: 445px !important;
   }
 }
+
+
+/* =========================================================
+   SHARED INJECTED FOOTER
+   ========================================================= */
+
+.footer {
+  background: var(--sage-dark);
+  color: var(--sage-mist);
+  padding: 70px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr 1fr;
+  gap: 45px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.footer-brand img {
+  display: block;
+  width: 178px;
+  height: auto;
+  max-height: 92px;
+  object-fit: contain;
+  object-position: left center;
+  background: var(--paper);
+  padding: 7px;
+  border-radius: 6px;
+}
+
+.footer-description {
+  margin: 18px 0 0;
+  max-width: 310px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--sage-soft);
+}
+
+.footer-tagline {
+  margin: 16px 0 0;
+  color: var(--gold-soft);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+.footer-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.footer a {
+  color: var(--sage-mist);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  color: var(--paper);
+}
+
+.footer-contact {
+  gap: 10px !important;
+}
+
+.footer-service-note {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--sage-soft);
+}
+
+.copyright {
+  border-top: 1px solid rgba(215, 230, 223, .18);
+  margin-top: 45px;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--sage-soft);
+}
+
+@media (max-width: 1000px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 55px 0 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-brand img {
+    width: 165px;
+  }
+
+  .copyright {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 35px;
+  }
+}
