@@ -3595,3 +3595,30 @@ main > section.hero:first-of-type .actions .text-link {
     ) !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE HERO — NURSING POOL POSITION
+   ========================================================= */
+@media (max-width: 700px) {
+  /* Keep the Nursing Pool label directly below Explore Our Services
+     and directly above the mobile hero photo. */
+  main > section.hero:first-of-type .hero-copy::after {
+    top: 432px !important;
+    bottom: auto !important;
+    left: 20px !important;
+    right: 20px !important;
+    padding: 0 !important;
+    border-top: 0 !important;
+    text-align: center !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    letter-spacing: .11em !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type .hero-copy::after {
+    top: 412px !important;
+  }
+}
