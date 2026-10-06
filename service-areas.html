@@ -92,11 +92,29 @@
           const layer = L.geoJSON(data, {
             style: {
               color: "#5A1830",
-              weight: 2.5,
+              weight: 3,
+              opacity: 0.95,
               fillColor: "#A8B9A7",
-              fillOpacity: 0.38
+              fillOpacity: 0.42
             },
             onEachFeature: function (feature, countyLayer) {
+              countyLayer.on({
+                mouseover: function () {
+                  countyLayer.setStyle({
+                    weight: 5,
+                    color: "#3D1021",
+                    fillOpacity: 0.55
+                  });
+                  countyLayer.bringToFront();
+                },
+                mouseout: function () {
+                  countyLayer.setStyle({
+                    weight: 3,
+                    color: "#5A1830",
+                    fillOpacity: 0.42
+                  });
+                }
+              });
               const name = feature.properties && feature.properties.county
                 ? feature.properties.county + " County"
                 : "Service Area";
