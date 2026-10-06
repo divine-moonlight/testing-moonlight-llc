@@ -4074,18 +4074,20 @@ main > section.hero:first-of-type .actions .text-link {
 }
 
 
-/* Mobile navigation: keep action links visually consistent with the menu. */
+
+/* =========================================================
+   SHARED MOBILE NAV + SCROLL REVEALS
+   ========================================================= */
+
 @media (max-width: 700px) {
-  .mobile-nav nav > a.btn,
-  .mobile-nav nav > a.btn.btn-primary,
-  .mobile-nav nav > a.btn.btn-secondary,
-  .mobile-nav nav > a.nav-inquiry {
+  .mobile-nav nav > a.nav-action-link {
     display: block;
     width: auto;
     min-height: 0;
     margin: 0;
-    padding: 12px 0;
+    padding: 13px 0;
     border: 0;
+    border-bottom: 1px solid rgba(221, 214, 203, 0.7);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
@@ -4098,16 +4100,54 @@ main > section.hero:first-of-type .actions .text-link {
     text-decoration: none;
   }
 
-  .mobile-nav nav > a.btn:hover,
-  .mobile-nav nav > a.btn.btn-primary:hover,
-  .mobile-nav nav > a.btn.btn-secondary:hover,
-  .mobile-nav nav > a.nav-inquiry:hover {
+  .mobile-nav nav > a.nav-action-link:hover {
     background: transparent;
     color: var(--burgundy);
   }
+}
 
-  .mobile-nav nav > a.btn.btn-primary::after,
-  .mobile-nav nav > a.btn.btn-secondary::after {
-    content: none;
+/* Give anchored service sections room below the fixed/sticky header. */
+.service-detail[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Elements marked for reveal remain visible by default. JavaScript
+   adds .reveal-ready before hiding them, so content never depends
+   on an animation script to be readable. */
+.reveal-ready .site-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .65s ease,
+    transform .65s ease;
+}
+
+.reveal-ready .site-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-ready .site-reveal:nth-child(2) {
+  transition-delay: .06s;
+}
+
+.reveal-ready .site-reveal:nth-child(3) {
+  transition-delay: .12s;
+}
+
+.reveal-ready .site-reveal:nth-child(4) {
+  transition-delay: .18s;
+}
+
+.reveal-ready .site-reveal:nth-child(5) {
+  transition-delay: .24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .site-reveal,
+  .reveal-ready .site-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
