@@ -153,11 +153,6 @@
 
 .service-detail:hover::after { transform: scaleY(1); }
 
-.service-detail.service-featured {
-  padding: 58px 32px;
-  border-bottom-color: transparent;
-}
-
 .service-number {
   padding-top: 4px;
   color: var(--services-gold);
