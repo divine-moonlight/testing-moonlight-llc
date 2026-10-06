@@ -134,6 +134,20 @@
     // consistently on every page, including pages with only shared scripts.
     initSiteReveals();
 
+    if (window.location.hash) {
+      const scrollToHashTarget = () => {
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (!target) return;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+      };
+      scrollToHashTarget();
+      window.addEventListener("load", scrollToHashTarget, { once: true });
+    }
+
     const header = wrapper.querySelector(".header");
     const toggle = wrapper.querySelector(".mobile-toggle");
     const mobile = wrapper.querySelector(".mobile-nav");
