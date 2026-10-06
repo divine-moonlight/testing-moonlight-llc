@@ -58,6 +58,14 @@
       ".quote-box",
       ".steps",
       ".careers-hero",
+      ".careers-hero-content > *",
+      ".careers-intro-grid > *",
+      ".careers-heading",
+      ".value-card",
+      ".position-card",
+      ".application-note",
+      ".apply-step",
+      ".final-apply",
       ".career-card",
       ".footer-grid > div"
     ];
