@@ -884,7 +884,11 @@
   }
 
   .careers-page .featured-position {
-    padding: 35px 20px;
+    padding: 35px 0;
+  }
+
+  .careers-page .position-card {
+    min-height: 0;
   }
 
   .careers-page .application-note {
