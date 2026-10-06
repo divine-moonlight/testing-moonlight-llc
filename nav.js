@@ -40,6 +40,64 @@
     </header>
   `;
 
+  function initSiteReveals() {
+    const selectors = [
+      ".section-head",
+      ".services-heading",
+      ".service-detail",
+      ".contact-card",
+      ".service-area-layout",
+      ".service-area-intro",
+      ".service-area-info",
+      ".mission-section-heading",
+      ".mission-copy > *",
+      ".mission-final",
+      ".founders-intro",
+      ".founders-feature",
+      ".founders-josephine",
+      ".quote-box",
+      ".steps",
+      ".careers-hero",
+      ".career-card",
+      ".footer-grid > div"
+    ];
+
+    const targets = document.querySelectorAll(selectors.join(","));
+    if (!targets.length) return;
+
+    document.documentElement.classList.add("reveal-ready");
+    targets.forEach(element => element.classList.add("site-reveal"));
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+      targets.forEach(element => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        currentObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px"
+    });
+
+    targets.forEach(element => observer.observe(element));
+
+    requestAnimationFrame(() => {
+      targets.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          element.classList.add("is-visible");
+          observer.unobserve(element);
+        }
+      });
+    });
+  }
+
   function injectNavigation() {
     document.querySelectorAll(".header").forEach(header => header.remove());
 
@@ -70,6 +128,11 @@
     wrapper.querySelectorAll("[data-nav]").forEach(link => {
       if (link.dataset.nav === active) link.classList.add("active");
     });
+
+
+    // Shared scroll reveals run from the navigation loader so they work
+    // consistently on every page, including pages with only shared scripts.
+    initSiteReveals();
 
     const header = wrapper.querySelector(".header");
     const toggle = wrapper.querySelector(".mobile-toggle");
