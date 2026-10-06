@@ -102,7 +102,7 @@
 .careers-hero-image {
   z-index: -2;
   background:
-    url("https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=2200&q=85")
+    url("media/careers-hero.jpg")
     center 35% / cover no-repeat;
 }
 
