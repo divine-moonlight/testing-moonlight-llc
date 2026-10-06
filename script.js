@@ -244,3 +244,74 @@ document.addEventListener("DOMContentLoaded", () => {
     addWhatsAppButton();
   }
 })();
+
+
+/* Site-wide scroll reveal: applies to common content blocks across pages. */
+(function () {
+  function initSiteReveals() {
+    const selectors = [
+      ".section-head",
+      ".services-heading",
+      ".service-detail",
+      ".contact-card",
+      ".service-area-layout",
+      ".service-area-intro",
+      ".service-area-info",
+      ".mission-section-heading",
+      ".mission-copy > *",
+      ".mission-final",
+      ".founders-intro",
+      ".founders-feature",
+      ".founders-josephine",
+      ".quote-box",
+      ".steps",
+      ".careers-hero",
+      ".career-card",
+      ".footer-grid > div"
+    ];
+
+    const targets = document.querySelectorAll(selectors.join(","));
+    if (!targets.length) return;
+
+    document.documentElement.classList.add("reveal-ready");
+    targets.forEach((element) => element.classList.add("site-reveal"));
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+      targets.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        currentObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px"
+    });
+
+    targets.forEach((element) => observer.observe(element));
+
+    // Anchored navigation can jump directly to content below the viewport.
+    // Reveal anything already in view after the browser settles the jump.
+    requestAnimationFrame(() => {
+      targets.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          element.classList.add("is-visible");
+          observer.unobserve(element);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSiteReveals);
+  } else {
+    initSiteReveals();
+  }
+})();
