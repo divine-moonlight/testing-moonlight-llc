@@ -2,7 +2,7 @@
 (function loadSharedNavigation() {
   if (document.querySelector('script[src$="nav.js"]')) return;
   const script = document.createElement("script");
-  script.src = "nav.js";
+  script.src = "nav.js?v=20261006-2";
   script.defer = true;
   document.head.appendChild(script);
 })();
