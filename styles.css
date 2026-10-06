@@ -4181,3 +4181,200 @@ main > section.hero:first-of-type .actions .text-link {
 .service-area-list li a:hover {
   color: var(--sage-dark);
 }
+
+
+/* =========================================================
+   SERVICE AREAS — MAP IMAGE PRESENTATION
+   ========================================================= */
+
+.service-area-page {
+  padding: 118px 0 105px;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(168,200,189,.16), transparent 28%),
+    var(--cream);
+}
+
+.service-area-intro {
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.service-area-intro .eyebrow {
+  color: var(--burgundy);
+  font-weight: 600;
+  letter-spacing: .18em;
+}
+
+.service-area-intro h1 {
+  margin: 9px 0 16px;
+  color: var(--sage-dark);
+  font-family: var(--display);
+  font-size: clamp(52px, 6vw, 78px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.service-area-intro p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.service-area-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, .72fr);
+  gap: clamp(34px, 5vw, 72px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.service-area-map-wrap {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(42,79,68,.12);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 0 24px 60px rgba(42,79,68,.10);
+}
+
+.service-area-map-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 0;
+  background: var(--paper);
+}
+
+.service-area-map-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(247,243,236,0) 72%, rgba(247,243,236,.18) 100%);
+}
+
+.service-area-map-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 570px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.map-image-label {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 2;
+  padding: 9px 13px;
+  border: 1px solid rgba(42,79,68,.12);
+  border-radius: 999px;
+  background: rgba(247,243,236,.92);
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(42,79,68,.10);
+}
+
+.service-area-info {
+  align-self: center;
+  padding: 8px 0;
+}
+
+.service-area-info > .eyebrow {
+  color: var(--burgundy);
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+
+.service-area-info h2 {
+  margin: 10px 0 17px;
+  color: var(--sage-dark);
+  font-family: var(--display);
+  font-size: clamp(40px, 4vw, 58px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.025em;
+}
+
+.service-area-summary {
+  margin: 0 0 22px !important;
+  color: var(--ink) !important;
+  font-size: 15px;
+  line-height: 1.7 !important;
+}
+
+.service-area-list {
+  margin: 0 0 25px;
+  border-top: 1px solid rgba(42,79,68,.15);
+}
+
+.service-area-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(42,79,68,.15);
+  color: var(--sage-dark);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.service-area-list li span::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin: 0 11px 1px 1px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(193,157,75,.10);
+}
+
+.service-area-list li a {
+  transition: color .2s ease, transform .2s ease;
+}
+
+.service-area-list li a:hover {
+  transform: translateX(2px);
+}
+
+.service-area-info > p:not(.service-area-summary) {
+  max-width: 390px;
+  margin: 0 0 25px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.service-area-info .btn {
+  min-height: 50px;
+  padding: 0 25px;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(90,24,48,.14);
+}
+
+@media (max-width: 850px) {
+  .service-area-page { padding: 88px 0 72px; }
+  .service-area-intro { margin-bottom: 38px; }
+  .service-area-layout { grid-template-columns: 1fr; gap: 38px; }
+  .service-area-map-wrap { border-radius: 20px; }
+  .service-area-map-image img { max-height: none; }
+  .service-area-info { padding: 0 4px; }
+}
+
+@media (max-width: 500px) {
+  .service-area-page { padding: 72px 0 60px; }
+  .service-area-intro { margin-bottom: 30px; }
+  .service-area-intro h1 { font-size: clamp(48px, 15vw, 64px); }
+  .service-area-intro p { font-size: 15px; line-height: 1.7; }
+  .service-area-map-wrap { border-radius: 16px; box-shadow: 0 16px 36px rgba(42,79,68,.09); }
+  .map-image-label { left: 13px; bottom: 13px; padding: 8px 10px; font-size: 9px; }
+  .service-area-info h2 { font-size: 43px; }
+}
