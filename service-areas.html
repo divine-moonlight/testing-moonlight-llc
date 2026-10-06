@@ -8,11 +8,6 @@
   <meta name="theme-color" content="#2A4F44">
   <link href="favicon.svg" rel="icon">
   <link href="styles.css" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    crossorigin=""
-  >
 </head>
 <body>
   <a class="skip" href="#main-content">Skip to main content</a>
@@ -31,18 +26,28 @@
 
         <div class="service-area-layout">
           <div class="service-area-map-wrap">
-            <div id="service-area-map" class="service-area-map" aria-label="Interactive map showing Divine Moonlight service areas"></div>
-            <div class="map-note">Highlighted service area · Drag to explore · Scroll to zoom</div>
+            <div class="service-area-map-image">
+              <img
+                src="media/map.png"
+                alt="Map showing Divine Moonlight's service area across Wake, Durham, and Orange Counties in North Carolina"
+              >
+              <div class="map-image-label">Our service area</div>
+            </div>
           </div>
 
           <aside class="service-area-info">
             <div class="eyebrow">Our service area</div>
             <h2>Serving the Triangle</h2>
+            <p class="service-area-summary">
+              We provide in-home support throughout three central North Carolina counties.
+            </p>
+
             <ul class="service-area-list">
               <li><span>Wake County</span><a href="https://www.google.com/maps/search/?api=1&query=Wake+County%2C+NC" target="_blank" rel="noopener">View ↗</a></li>
               <li><span>Durham County</span><a href="https://www.google.com/maps/search/?api=1&query=Durham+County%2C+NC" target="_blank" rel="noopener">View ↗</a></li>
               <li><span>Orange County</span><a href="https://www.google.com/maps/search/?api=1&query=Orange+County%2C+NC" target="_blank" rel="noopener">View ↗</a></li>
             </ul>
+
             <p>
               If you are near the edge of our service area, contact us to discuss
               your location and care needs.
@@ -56,90 +61,6 @@
 
   <div id="shared-site-footer"></div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-  <script>
-    (function () {
-      const mapElement = document.getElementById("service-area-map");
-      if (!mapElement || typeof L === "undefined") return;
-
-      const map = L.map(mapElement, {
-        scrollWheelZoom: true,
-        zoomControl: true,
-        attributionControl: true
-      });
-
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
-      }).addTo(map);
-
-      const countyUrl =
-        "https://services.gis.nc.gov/secure/rest/services/ImageryProject/CO20_Summary/MapServer/0/query" +
-        "?where=county%20in%20(%27Wake%27,%27Durham%27,%27Orange%27)" +
-        "&outFields=county,fips" +
-        "&returnGeometry=true" +
-        "&outSR=4326" +
-        "&f=geojson";
-
-      fetch(countyUrl)
-        .then(response => {
-          if (!response.ok) throw new Error("County boundary request failed.");
-          return response.json();
-        })
-        .then(data => {
-          const layer = L.geoJSON(data, {
-            style: {
-              color: "#741F3D",
-              weight: 3,
-              opacity: 1,
-              fillColor: "#A8C8BD",
-              fillOpacity: 0.58
-            },
-            onEachFeature: function (feature, countyLayer) {
-              countyLayer.on({
-                mouseover: function () {
-                  countyLayer.setStyle({
-                    weight: 5,
-                    color: "#5A1830",
-                    fillOpacity: 0.72
-                  });
-                  countyLayer.bringToFront();
-                },
-                mouseout: function () {
-                  countyLayer.setStyle({
-                    weight: 3,
-                    color: "#741F3D",
-                    fillOpacity: 0.58
-                  });
-                }
-              });
-              const name = feature.properties && feature.properties.county
-                ? feature.properties.county + " County"
-                : "Service Area";
-
-              countyLayer.bindTooltip(name, {
-                sticky: true,
-                direction: "center",
-                className: "service-area-tooltip"
-              });
-
-              countyLayer.bindPopup(
-                "<strong>" + name + "</strong><br>Divine Moonlight service area"
-              );
-            }
-          }).addTo(map);
-
-          map.fitBounds(layer.getBounds(), {
-            padding: [28, 28]
-          });
-        })
-        .catch(() => {
-          map.setView([35.82, -78.75], 9);
-        });
-    })();
-  </script>
   <script src="nav.js"></script>
   <script src="footer.js"></script>
 </body>
