@@ -3913,3 +3913,162 @@ main > section.hero:first-of-type .actions .text-link {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Service Areas page */
+.service-area-page {
+  padding: 105px 0 90px;
+  min-height: 65vh;
+}
+
+.service-area-intro {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.service-area-intro .eyebrow {
+  margin-bottom: 10px;
+}
+
+.service-area-intro h1 {
+  margin: 0 0 16px;
+}
+
+.service-area-intro p {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.service-area-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, .65fr);
+  gap: 30px;
+  align-items: stretch;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.service-area-map-wrap {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(42,79,68,.14);
+  border-radius: 18px;
+  background: #e9eee9;
+}
+
+.service-area-map {
+  width: 100%;
+  height: 520px;
+}
+
+.service-area-map .leaflet-control-zoom a {
+  color: var(--sage-dark);
+}
+
+.service-area-map .leaflet-popup-content-wrapper,
+.service-area-map .leaflet-popup-tip {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.service-area-tooltip {
+  border: 0;
+  border-radius: 5px;
+  padding: 7px 10px;
+  background: var(--cream);
+  color: var(--sage-dark);
+  box-shadow: 0 5px 18px rgba(42,79,68,.16);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.service-area-tooltip:before {
+  display: none;
+}
+
+.map-note {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 500;
+  padding: 8px 11px;
+  border-radius: 5px;
+  background: rgba(247,243,236,.92);
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 11px;
+  box-shadow: 0 4px 16px rgba(42,79,68,.12);
+}
+
+.service-area-info {
+  align-self: center;
+  padding: 16px 8px;
+}
+
+.service-area-info h2 {
+  margin: 10px 0 22px;
+  font-family: var(--display);
+  font-size: clamp(34px, 3vw, 48px);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--sage-dark);
+}
+
+.service-area-list {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(42,79,68,.16);
+}
+
+.service-area-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(42,79,68,.16);
+  color: var(--sage-dark);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.service-area-info p {
+  margin: 0 0 25px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .service-area-page {
+    padding: 80px 0 65px;
+  }
+
+  .service-area-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-area-map {
+    height: 460px;
+  }
+
+  .service-area-info {
+    padding: 8px 4px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-area-map {
+    height: 390px;
+  }
+
+  .service-area-map-wrap {
+    border-radius: 14px;
+  }
+
+  .map-note {
+    font-size: 10px;
+  }
+}
