@@ -16,7 +16,6 @@
           <a data-nav="home" href="index.html">Home</a>
           <a data-nav="services" href="services.html">Services</a>
           <a data-nav="about" href="mission.html">About Us</a>
-          <a data-nav="team" href="team.html">Our Team</a>
           <a data-nav="service-areas" href="service-areas.html">Service Areas</a>
           <a data-nav="careers" href="careers.html">Careers</a>
           <a data-nav="contact" href="contact.html">Contact</a>
@@ -31,7 +30,6 @@
           <a data-nav="home" href="index.html">Home</a>
           <a data-nav="services" href="services.html">Services</a>
           <a data-nav="about" href="mission.html">About Us</a>
-          <a data-nav="team" href="team.html">Our Team</a>
           <a data-nav="service-areas" href="service-areas.html">Service Areas</a>
           <a data-nav="careers" href="careers.html">Careers</a>
           <a data-nav="contact" href="contact.html">Contact</a>
