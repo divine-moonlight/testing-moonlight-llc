@@ -48,7 +48,7 @@
           <div class="footer-title">Contact</div>
           <ul class="footer-contact">
             <li><a href="tel:+19843890943">984-389-0943</a></li>
-            <li><a href="mailto:divinemoonlight.hc@gmail.com">divinemoonlight.hc@gmail.com</a></li>
+            <li><a href="mailto:divine.moonlight.hc@gmail.com">divine.moonlight.hc@gmail.com</a></li>
             <li>Raleigh, NC</li>
           </ul>
           <p class="footer-service-note">Serving Wake, Durham, and Orange Counties.</p>
