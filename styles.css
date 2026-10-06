@@ -4544,3 +4544,41 @@ main > section.hero:first-of-type .actions .btn-primary { order: 3 !important; }
     height: 445px !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE SAFETY — NEVER HIDE CORE SITE UI
+   The header, footer, and page content must remain readable
+   even if a reveal observer is delayed or unavailable.
+   ========================================================= */
+@media (max-width: 700px) {
+  #shared-site-navigation,
+  #shared-site-navigation .header,
+  #shared-site-navigation .navrow,
+  #shared-site-navigation .brand,
+  #shared-site-navigation .mobile-toggle,
+  #shared-site-footer,
+  #shared-site-footer .footer {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  #shared-site-navigation {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  #shared-site-navigation .header {
+    display: block !important;
+  }
+
+  #shared-site-footer,
+  #shared-site-footer .footer {
+    display: block !important;
+  }
+
+  .reveal-ready .site-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
