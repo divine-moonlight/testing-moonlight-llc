@@ -3856,3 +3856,58 @@ main > section.hero:first-of-type .actions .text-link {
     margin-top: 35px;
   }
 }
+
+
+/* Contact page */
+.contact-page {
+  padding: 110px 0 90px;
+  min-height: 62vh;
+}
+.contact-page .section-head {
+  max-width: 700px;
+  margin-bottom: 42px;
+}
+.contact-page .section-head h1 {
+  margin-bottom: 16px;
+}
+.contact-page .section-head p {
+  max-width: 620px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 900px;
+}
+.contact-card {
+  padding: 28px;
+  border: 1px solid rgba(42, 79, 68, 0.14);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.58);
+}
+.contact-card .eyebrow {
+  margin-bottom: 10px;
+}
+.contact-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+}
+.contact-card p {
+  margin: 0;
+  line-height: 1.7;
+}
+.contact-card a {
+  color: inherit;
+  text-decoration: none;
+}
+.contact-card a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .contact-page {
+    padding: 80px 0 65px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
