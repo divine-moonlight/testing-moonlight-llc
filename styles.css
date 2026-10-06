@@ -1,7 +1,3569 @@
+@import url('styles-legacy.css');
+
 /* =========================================================
-   HERO CTA ORDER — NURSING POOL → SERVICES → REQUEST CARE
+   DIVINE MOONLIGHT — HERO REDESIGN
+   Keeps the existing site styles intact and replaces the
+   duplicated experimental hero with the finished homepage hero.
    ========================================================= */
-main > section.hero:first-of-type .actions .mobile-nursing-pool {
+
+/* Hide the old experimental hero. The second .hero in index.html
+   becomes the single visible homepage hero. */
+/* The homepage now uses the first (and only) hero section. */
+
+main > section.hero:nth-of-type(2) {
+  position: relative;
+  min-height: calc(100svh - 72px);
+  height: calc(100svh - 72px);
+  overflow: hidden;
+  background: var(--cream);
+  isolation: isolate;
+}
+
+main > section.hero:nth-of-type(2) .hero-grid {
+  min-height: 100%;
+  height: 100%;
+  grid-template-columns: 54% 46%;
+}
+
+main > section.hero:nth-of-type(2) .hero-copy {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  padding: 10px 48px 70px;
+  display: flex;
+  align-items: flex-start;
+  background:
+    linear-gradient(90deg,
+      rgba(247,243,236,1) 0%,
+      rgba(247,243,236,.98) 70%,
+      rgba(247,243,236,.86) 100%);
+}
+
+main > section.hero:nth-of-type(2) .hero-copy > .container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0;
+}
+
+/* Motto + service area */
+main > section.hero:nth-of-type(2) .eyebrow {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 1;
+}
+
+main > section.hero:nth-of-type(2) .eyebrow::before {
+  content: 'CARE WITH COMPASSION';
+  display: block;
+  color: var(--burgundy);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .28em;
+  line-height: 1.2;
+}
+
+main > section.hero:nth-of-type(2) .eyebrow::after {
+  content: 'Wake · Durham · Orange Counties, NC';
+  display: block;
+  margin-top: 13px;
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Small gold editorial accent */
+main > section.hero:nth-of-type(2) .eyebrow::before {
+  border-left: 34px solid var(--gold);
+  padding-left: 12px;
+}
+
+/* Main headline */
+main > section.hero:nth-of-type(2) h1 {
+  max-width: 680px;
+  margin: 29px 0 0;
+  color: var(--sage-dark);
+  font-family: var(--display);
+  font-size: clamp(62px, 6.3vw, 94px);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: -.045em;
+}
+
+/* Replace the longer generic paragraph with the short marketing summary. */
+main > section.hero:nth-of-type(2) .hero-copy > .container > p {
+  max-width: 570px;
+  margin-top: 25px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+main > section.hero:nth-of-type(2) .hero-copy > .container > p {
+  font-size: 0;
+}
+
+main > section.hero:nth-of-type(2) .hero-copy > .container > p::after {
+  content: 'Compassionate in-home support that helps seniors live comfortably, safely, and with dignity while giving families confidence that their loved ones are cared for.';
+  display: block;
+  font-size: 17px;
+}
+
+/* Clean CTA hierarchy */
+main > section.hero:nth-of-type(2) .actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 31px;
+}
+
+main > section.hero:nth-of-type(2) .actions .btn-secondary {
+  display: none;
+}
+
+main > section.hero:nth-of-type(2) .actions .btn-primary {
+  min-height: 53px;
+  padding: 0 27px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px -14px rgba(90,24,48,.55);
+}
+
+main > section.hero:nth-of-type(2) .actions .btn-primary::after {
+  content: ' →';
+  font-size: 17px;
+}
+
+main > section.hero:nth-of-type(2) .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding-bottom: 4px;
+  color: var(--sage-dark);
+  border-bottom: 1px solid rgba(42,79,68,.3);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+main > section.hero:nth-of-type(2) .text-link:hover {
+  color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+/* Nursing pool callout */
+main > section.hero:nth-of-type(2) .hero-copy::after {
+  content: 'NURSING POOL   ·   RN · LPN · CNA SUPPORT';
+  position: absolute;
+  left: 48px;
+  bottom: 38px;
+  padding-top: 16px;
+  padding-right: 24px;
+  border-top: 1px solid rgba(42,79,68,.18);
+  color: var(--burgundy);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+/* Image treatment */
+main > section.hero:nth-of-type(2) .hero-image {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+main > section.hero:nth-of-type(2) .hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, var(--cream) 0%, rgba(247,243,236,.3) 18%, rgba(247,243,236,.04) 100%);
+  pointer-events: none;
+}
+
+main > section.hero:nth-of-type(2) .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+  transform: scale(1.015);
+}
+
+/* Desktop scroll cue */
+main > section.hero:nth-of-type(2)::after {
+  content: 'EXPLORE  ↓';
+  position: absolute;
+  left: 50%;
+  bottom: 21px;
+  z-index: 5;
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  transform: translateX(-50%);
+  opacity: .72;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  main > section.hero:nth-of-type(2) {
+    min-height: calc(100svh - 72px);
+    height: auto;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-grid {
+    min-height: calc(100svh - 72px);
+    height: auto;
+    grid-template-columns: 56% 44%;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-copy {
+    padding: 10px 30px 70px;
+    background: rgba(247,243,236,.96);
+  }
+
+  main > section.hero:nth-of-type(2) h1 {
+    font-size: clamp(58px, 7vw, 76px);
+  }
+
+  main > section.hero:nth-of-type(2) .hero-copy::after {
+    left: 30px;
+    bottom: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  main > section.hero:nth-of-type(2) {
+    min-height: calc(100svh - 72px);
+    height: auto;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-grid {
+    min-height: calc(100svh - 72px);
+    display: block;
+    position: relative;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-copy {
+    min-height: calc(100svh - 72px);
+    padding: 12px 16px 105px;
+    background: rgba(247,243,236,.91);
+  }
+
+  main > section.hero:nth-of-type(2) .hero-copy > .container {
+    max-width: 620px;
+  }
+
+  main > section.hero:nth-of-type(2) .eyebrow::before {
+    font-size: 10px;
+    letter-spacing: .22em;
+  }
+
+  main > section.hero:nth-of-type(2) .eyebrow::after {
+    font-size: 10px;
+    letter-spacing: .09em;
+  }
+
+  main > section.hero:nth-of-type(2) h1 {
+    max-width: 100%;
+    margin-top: 23px;
+    font-size: clamp(53px, 15vw, 72px);
+    line-height: .91;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-copy > .container > p::after {
+    font-size: 16px;
+    line-height: 1.58;
+  }
+
+  main > section.hero:nth-of-type(2) .actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 27px;
+  }
+
+  main > section.hero:nth-of-type(2) .text-link {
+    margin-top: 0;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-copy::after {
+    left: 16px;
+    right: 16px;
+    bottom: 30px;
+    padding-right: 0;
+    font-size: 10px;
+    letter-spacing: .11em;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .28;
+  }
+
+  main > section.hero:nth-of-type(2) .hero-image::before {
+    background: linear-gradient(180deg, rgba(247,243,236,.95) 0%, rgba(247,243,236,.75) 58%, rgba(247,243,236,.45) 100%);
+  }
+
+  main > section.hero:nth-of-type(2)::after {
+    display: none;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  main > section.hero:nth-of-type(2) .hero-copy {
+    padding-top: 10px;
+  }
+
+  main > section.hero:nth-of-type(2) h1 {
+    font-size: clamp(50px, 14.5vw, 64px);
+  }
+
+  main > section.hero:nth-of-type(2) .hero-copy::after {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — HERO POSITIONING UPDATE
+   ========================================================= */
+
+/* The motto is the first visual element directly beneath the nav
+   and is centered across the full hero. Supporting content remains left. */
+main > section.hero:first-of-type {
+  position: relative;
+  min-height: calc(100svh - 72px);
+  height: calc(100svh - 72px);
+  overflow: hidden;
+  background: var(--cream);
+  isolation: isolate;
+}
+
+main > section.hero:first-of-type .hero-grid {
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+  grid-template-columns: 54% 46%;
+}
+
+main > section.hero:first-of-type .hero-copy {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  padding: 92px 48px 70px;
+  display: flex;
+  align-items: flex-start;
+  background: linear-gradient(90deg,
+    rgba(247,243,236,1) 0%,
+    rgba(247,243,236,.98) 70%,
+    rgba(247,243,236,.86) 100%);
+}
+
+main > section.hero:first-of-type .hero-copy > .container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0;
+}
+
+/* Remove the old "CARE WITH COMPASSION" treatment entirely. */
+main > section.hero:first-of-type .eyebrow::before {
+  content: none;
+  display: none;
+}
+
+main > section.hero:first-of-type .eyebrow {
+  margin: 0;
+  padding: 0;
+}
+
+main > section.hero:first-of-type .eyebrow::after {
+  content: 'Wake · Durham · Orange Counties, NC';
+  display: block;
+  margin: 0;
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Motto: centered, immediately beneath the navigation. */
+main > section.hero:first-of-type h1 {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--sage-dark);
+  font-family: var(--display);
+  font-size: clamp(58px, 6.3vw, 92px);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: -.045em;
+  pointer-events: none;
+}
+
+/* Supporting content stays left aligned beneath the centered motto. */
+main > section.hero:first-of-type .hero-copy > .container > p {
+  max-width: 570px;
+  margin-top: 25px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+main > section.hero:first-of-type .actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 31px;
+}
+
+main > section.hero:first-of-type .actions .btn-secondary {
+  display: none;
+}
+
+main > section.hero:first-of-type .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding-bottom: 4px;
+  color: var(--sage-dark);
+  border-bottom: 1px solid rgba(42,79,68,.3);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+main > section.hero:first-of-type .hero-copy::after {
+  content: 'NURSING POOL   ·   RN · LPN · CNA SUPPORT';
+  position: absolute;
+  left: 48px;
+  bottom: 38px;
+  padding-top: 16px;
+  padding-right: 24px;
+  border-top: 1px solid rgba(42,79,68,.18);
+  color: var(--burgundy);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+main > section.hero:first-of-type .hero-image {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+main > section.hero:first-of-type .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+  transform: scale(1.015);
+}
+
+/* Mobile keeps the motto centered but lets supporting content use the full width. */
+@media (max-width: 700px) {
+  main > section.hero:first-of-type {
+    min-height: calc(100svh - 72px);
+    height: auto;
+  }
+
+  main > section.hero:first-of-type .hero-grid {
+    min-height: calc(100svh - 72px);
+    height: auto;
+    display: block;
+  }
+
+  main > section.hero:first-of-type .hero-copy {
+    min-height: calc(100svh - 72px);
+    padding: 82px 16px 105px;
+    background: rgba(247,243,236,.91);
+  }
+
+  main > section.hero:first-of-type h1 {
+    top: 8px;
+    padding: 0 16px;
+    font-size: clamp(46px, 13vw, 68px);
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .28;
+  }
+
+  main > section.hero:first-of-type .hero-copy::after {
+    left: 16px;
+    right: 16px;
+    bottom: 30px;
+    padding-right: 0;
+    font-size: 10px;
+    letter-spacing: .11em;
+  }
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — HERO FINAL POLISH
+   ========================================================= */
+
+/* Full-bleed photographic hero with a soft editorial fade into the copy. */
+main > section.hero:first-of-type {
+  position: relative !important;
+  min-height: calc(100svh - 72px) !important;
+  height: calc(100svh - 72px) !important;
+  overflow: hidden !important;
+  background: var(--cream) !important;
+  isolation: isolate !important;
+}
+
+main > section.hero:first-of-type .hero-grid {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+main > section.hero:first-of-type .hero-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+}
+
+main > section.hero:first-of-type .hero-image picture {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.hero-image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: scale(1.02) !important;
+}
+
+main > section.hero:first-of-type .hero-image::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(247,243,236,.99) 0%,
+      rgba(247,243,236,.96) 22%,
+      rgba(247,243,236,.82) 42%,
+      rgba(247,243,236,.50) 57%,
+      rgba(247,243,236,.16) 72%,
+      rgba(247,243,236,0) 100%
+    ) !important;
+}
+
+/* Copy sits over the photograph rather than occupying a separate column. */
+main > section.hero:first-of-type .hero-copy {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  display: block !important;
+  background: transparent !important;
+}
+
+main > section.hero:first-of-type .hero-copy > .container {
+  width: 100% !important;
+  max-width: 1320px !important;
+  height: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 56px !important;
+  box-sizing: border-box !important;
+}
+
+/* The motto is centered against the entire viewport, not the left column. */
+main > section.hero:first-of-type h1 {
+  position: absolute !important;
+  top: 22px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 4 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 30px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  color: var(--sage-dark) !important;
+  font-family: var(--display) !important;
+  font-size: clamp(58px, 6vw, 92px) !important;
+  font-weight: 500 !important;
+  line-height: .88 !important;
+  letter-spacing: -.045em !important;
+  white-space: nowrap !important;
+}
+
+/* Service area appears once, beneath the motto, aligned with the left copy. */
+main > section.hero:first-of-type .eyebrow {
+  position: absolute !important;
+  top: 148px !important;
+  left: 56px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--burgundy) !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: .18em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+main > section.hero:first-of-type .eyebrow::before,
+main > section.hero:first-of-type .eyebrow::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Left-side content has a deliberate rhythm and never collides with the motto. */
+main > section.hero:first-of-type .hero-copy > .container > p {
+  position: absolute !important;
+  top: 205px !important;
+  left: 56px !important;
+  max-width: 560px !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-family: var(--sans) !important;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 12px rgba(247,243,236,.35) !important;
+}
+
+main > section.hero:first-of-type .hero-copy > .container > p::after {
+  content: none !important;
+}
+
+main > section.hero:first-of-type .actions {
+  position: absolute !important;
+  top: 350px !important;
+  left: 56px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 22px !important;
+}
+
+main > section.hero:first-of-type .actions .btn-secondary {
+  display: none !important;
+}
+
+main > section.hero:first-of-type .actions .btn-primary {
+  min-height: 54px !important;
+  padding: 0 29px !important;
+  border-radius: 999px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 14px 34px rgba(90,24,48,.18) !important;
+}
+
+main > section.hero:first-of-type .actions .btn-primary::after {
+  content: ' →' !important;
+  font-size: 17px !important;
+}
+
+main > section.hero:first-of-type .text-link {
+  position: absolute !important;
+  top: 430px !important;
+  left: 56px !important;
+  display: inline-flex !important;
+  margin: 0 !important;
+  padding-bottom: 5px !important;
+  color: var(--sage-dark) !important;
+  border-bottom: 1px solid rgba(42,79,68,.35) !important;
+  font-family: var(--sans) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+main > section.hero:first-of-type .hero-copy::after {
+  content: 'NURSING POOL   ·   RN · LPN · CNA SUPPORT' !important;
+  position: absolute !important;
+  left: 56px !important;
+  bottom: 38px !important;
+  z-index: 4 !important;
+  padding: 15px 28px 0 0 !important;
+  border-top: 1px solid rgba(42,79,68,.22) !important;
+  color: var(--burgundy) !important;
+  font-family: var(--sans) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .16em !important;
+}
+
+/* Subtle readability veil behind the left copy, while keeping the photo visible. */
+main > section.hero:first-of-type .hero-copy::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+}
+
+/* Mobile: keep the full photo, but make the copy more legible. */
+@media (max-width: 900px) {
+  main > section.hero:first-of-type h1 {
+    font-size: clamp(52px, 7vw, 76px) !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container {
+    padding: 0 32px !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow,
+  main > section.hero:first-of-type .hero-copy > .container > p,
+  main > section.hero:first-of-type .actions,
+  main > section.hero:first-of-type .text-link {
+    left: 32px !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow {
+    top: 140px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container > p {
+    top: 192px !important;
+    max-width: 500px !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 345px !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    top: 425px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  main > section.hero:first-of-type {
+    min-height: calc(100svh - 72px) !important;
+    height: calc(100svh - 72px) !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container {
+    padding: 0 20px !important;
+  }
+
+  main > section.hero:first-of-type h1 {
+    top: 20px !important;
+    padding: 0 16px !important;
+    font-size: clamp(42px, 12vw, 62px) !important;
+    white-space: normal !important;
+  }
+
+  main > section.hero:first-of-type .hero-image::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247,243,236,.94) 0%,
+        rgba(247,243,236,.82) 30%,
+        rgba(247,243,236,.62) 58%,
+        rgba(247,243,236,.28) 100%
+      ) !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow {
+    top: 150px !important;
+    left: 20px !important;
+    right: 20px !important;
+    font-size: 10px !important;
+    letter-spacing: .12em !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container > p {
+    top: 195px !important;
+    left: 20px !important;
+    right: 20px !important;
+    max-width: 520px !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 335px !important;
+    left: 20px !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    top: 415px !important;
+    left: 20px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy::after {
+    left: 20px !important;
+    bottom: 28px !important;
+    font-size: 9px !important;
+    letter-spacing: .10em !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type h1 {
+    top: 18px !important;
+    font-size: clamp(40px, 12vw, 54px) !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow {
+    top: 140px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container > p {
+    top: 183px !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 330px !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    top: 410px !important;
+  }
+}
+
+/* =========================================
+   DIVINE MOONLIGHT — MISSION PAGE
+   ========================================= */
+
+.mission-page {
+  --sage: #687563;
+  --sage-dark: #4d594b;
+  --burgundy: #6b3039;
+  --gold: #b4975a;
+  --gold-light: #d4bd82;
+  --cream: #f7f4ed;
+  --warm-white: #fcfbf8;
+  --text: #2f302c;
+  --muted: #73756d;
+
+  background: var(--warm-white);
+  color: var(--text);
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.mission-hero {
+  min-height: 82vh;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(180, 151, 90, 0.13),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #f8f6f0 0%,
+      #f3f1e9 100%
+    );
+
+  padding: 120px 24px 100px;
+}
+
+
+.mission-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 28px;
+
+  border: 1px solid rgba(180, 151, 90, 0.28);
+
+  pointer-events: none;
+}
+
+
+.mission-hero-glow {
+  position: absolute;
+
+  width: 480px;
+  height: 480px;
+
+  border-radius: 50%;
+
+  background: rgba(180, 151, 90, 0.07);
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+.mission-hero-content {
+  position: relative;
+
+  max-width: 850px;
+
+  z-index: 2;
+}
+
+
+.mission-eyebrow {
+  display: inline-block;
+
+  font-family: "Outfit", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  color: var(--burgundy);
+
+  margin-bottom: 28px;
+}
+
+
+.mission-hero h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(60px, 7vw, 96px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  color: var(--sage-dark);
+}
+
+
+.mission-hero h1 em {
+  color: var(--burgundy);
+
+  font-weight: 400;
+}
+
+
+.crown-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin: 34px auto 30px;
+
+  width: min(400px, 80%);
+}
+
+
+.crown-divider span {
+  height: 1px;
+
+  flex: 1;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(180, 151, 90, 0.7)
+  );
+}
+
+
+.crown-divider span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(180, 151, 90, 0.7),
+    transparent
+  );
+}
+
+
+.crown-symbol {
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  color: var(--gold);
+}
+
+
+.mission-intro {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  font-family: "Outfit", sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  color: var(--muted);
+}
+
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 34px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.scroll-indicator span {
+  font-family: "Outfit", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  font-weight: 600;
+
+  color: #88877e;
+}
+
+
+.scroll-line {
+  width: 1px;
+  height: 34px;
+
+  background: var(--gold);
+
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.mission-content {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 140px 60px 130px;
+}
+
+
+/* =========================================
+   SECTION HEADING
+   ========================================= */
+
+.mission-section-heading {
+  display: grid;
+
+  grid-template-columns: 100px 1fr;
+
+  gap: 30px;
+
+  margin-bottom: 100px;
+}
+
+
+.section-number {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 22px;
+
+  color: var(--gold);
+
+  padding-top: 12px;
+}
+
+
+.small-heading {
+  display: block;
+
+  font-family: "Outfit", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: var(--burgundy);
+
+  margin-bottom: 16px;
+}
+
+
+.mission-section-heading h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(52px, 6vw, 78px);
+
+  line-height: 0.92;
+
+  font-weight: 500;
+
+  color: var(--sage-dark);
+
+  letter-spacing: -1px;
+}
+
+
+.mission-section-heading h2 em {
+  color: var(--burgundy);
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   COPY
+   ========================================= */
+
+.mission-copy {
+  max-width: 930px;
+
+  margin-left: auto;
+}
+
+
+/* =========================================
+   FIRST STATEMENT
+   ========================================= */
+
+.mission-statement {
+  display: grid;
+
+  grid-template-columns: 1fr 1.5fr;
+
+  gap: 70px;
+
+  margin-bottom: 90px;
+}
+
+
+.mission-statement p {
+  margin: 0;
+
+  font-family: "Outfit", sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  color: var(--muted);
+}
+
+
+.mission-statement p:first-child {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 36px;
+
+  line-height: 1.1;
+
+  color: var(--sage-dark);
+}
+
+
+/* =========================================
+   FAMILY HIGHLIGHT
+   ========================================= */
+
+.mission-highlight {
+  position: relative;
+
+  background: var(--cream);
+
+  padding: 65px 75px 65px 100px;
+
+  margin-bottom: 100px;
+
+  border-left: 3px solid var(--gold);
+}
+
+
+.highlight-mark {
+  position: absolute;
+
+  left: 36px;
+  top: 34px;
+
+  font-family: Georgia, serif;
+
+  font-size: 70px;
+
+  line-height: 1;
+
+  color: var(--gold);
+
+  opacity: 0.6;
+}
+
+
+.mission-highlight p {
+  position: relative;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(28px, 3vw, 39px);
+
+  line-height: 1.3;
+
+  color: var(--sage-dark);
+}
+
+
+/* =========================================
+   PROFESSIONALISM SECTION
+   ========================================= */
+
+.mission-professional {
+  display: grid;
+
+  grid-template-columns: 1fr 1.15fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 110px;
+}
+
+
+.professional-heading h3 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(42px, 4vw, 58px);
+
+  line-height: 0.98;
+
+  font-weight: 500;
+
+  color: var(--sage-dark);
+}
+
+
+.professional-heading h3 em {
+  color: var(--burgundy);
+
+  font-weight: 400;
+}
+
+
+.mission-professional > p {
+  margin: 0;
+
+  font-family: "Outfit", sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  color: var(--muted);
+}
+
+
+/* =========================================
+   CLOSING
+   ========================================= */
+
+.mission-closing {
+  padding-left: 60px;
+
+  margin-bottom: 110px;
+}
+
+
+.closing-line {
+  width: 50px;
+  height: 2px;
+
+  background: var(--gold);
+
+  margin-bottom: 28px;
+}
+
+
+.mission-closing p {
+  max-width: 750px;
+
+  margin: 0;
+
+  font-family: "Outfit", sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.85;
+
+  color: var(--muted);
+}
+
+
+.mission-closing .closing-lead {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(34px, 4vw, 48px);
+
+  line-height: 1.1;
+
+  color: var(--sage-dark);
+
+  margin-bottom: 18px;
+}
+
+
+.mission-closing strong {
+  color: var(--burgundy);
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   FINAL STATEMENT
+   ========================================= */
+
+.mission-final {
+  position: relative;
+
+  text-align: center;
+
+  max-width: 780px;
+
+  margin: 0 auto;
+
+  padding-top: 70px;
+}
+
+
+.mission-final::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 80px;
+  height: 1px;
+
+  background: var(--gold);
+}
+
+
+.final-crown {
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  color: var(--gold);
+
+  margin-bottom: 24px;
+}
+
+
+.mission-final p {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(28px, 3vw, 39px);
+
+  line-height: 1.35;
+
+  color: var(--sage-dark);
+}
+
+
+.mission-final span {
+  color: var(--burgundy);
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+.reveal.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .mission-hero {
+    min-height: 78vh;
+
+    padding: 100px 24px 90px;
+  }
+
+
+  .mission-hero::before {
+    inset: 16px;
+  }
+
+
+  .mission-hero h1 {
+    font-size: clamp(50px, 15vw, 72px);
+
+    letter-spacing: -1px;
+  }
+
+
+  .mission-intro {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  .mission-content {
+    padding: 90px 25px;
+  }
+
+
+  .mission-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 65px;
+  }
+
+
+  .section-number {
+    padding: 0;
+  }
+
+
+  .mission-copy {
+    margin: 0;
+  }
+
+
+  .mission-statement {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 65px;
+  }
+
+
+  .mission-statement p:first-child {
+    font-size: 34px;
+  }
+
+
+  .mission-highlight {
+    padding: 50px 30px 50px 60px;
+
+    margin-bottom: 70px;
+  }
+
+
+  .highlight-mark {
+    left: 22px;
+    top: 27px;
+
+    font-size: 52px;
+  }
+
+
+  .mission-highlight p {
+    font-size: 28px;
+  }
+
+
+  .mission-professional {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    margin-bottom: 80px;
+  }
+
+
+  .professional-heading h3 {
+    font-size: 42px;
+  }
+
+
+  .mission-closing {
+    padding-left: 25px;
+
+    margin-bottom: 80px;
+  }
+
+
+  .mission-closing .closing-lead {
+    font-size: 36px;
+  }
+
+
+  .mission-final p {
+    font-size: 29px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+}
+
+
+
+/* =========================================
+   DIVINE MOONLIGHT — FOUNDERS SECTION
+   ========================================= */
+
+.founders-section {
+  position: relative;
+  overflow: hidden;
+  padding: 115px 0 105px;
+  background: #f7f3ec;
+  color: #2f302c;
+}
+
+.founders-section,
+.founders-section * {
+  box-sizing: border-box;
+}
+
+.founders-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.founders-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: .06;
+}
+
+.flag-star {
+  position: absolute;
+  width: 420px;
+  height: 300px;
+  right: -70px;
+  top: 20px;
+  background: #27455d;
+  border-radius: 0 0 100% 0;
+  clip-path: polygon(0 0,100% 0,100% 100%,0 0);
+}
+
+.flag-stripe {
+  position: absolute;
+  right: -120px;
+  width: 760px;
+  height: 16px;
+  background: #6b3039;
+  transform: rotate(-12deg);
+}
+
+.stripe-one { top: 110px; }
+.stripe-two { top: 180px; }
+.stripe-three { top: 250px; }
+
+.founders-intro {
+  max-width: 760px;
+  margin-bottom: 55px;
+}
+
+.founders-kicker,
+.founder-role {
+  display: block;
+  color: #6b3039;
+  font: 700 11px/1.2 Arial, sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.founders-intro h2 {
+  margin: 12px 0 18px;
+  color: #4d594b;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(54px, 7vw, 88px);
+  line-height: .88;
+  font-weight: 500;
+  letter-spacing: -.03em;
+}
+
+.founders-intro h2 em {
+  color: #6b3039;
+  font-weight: 400;
+}
+
+.founders-intro p {
+  max-width: 690px;
+  margin: 0;
+  color: #73756d;
+  font: 400 16px/1.8 "Outfit", Arial, sans-serif;
+}
+
+.founders-feature {
+  display: grid;
+  grid-template-columns: minmax(300px,.9fr) minmax(360px,1.1fr);
+  min-height: 610px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(42,79,68,.10);
+}
+
+.founder-image-wrap {
+  position: relative;
+  min-height: 610px;
+  overflow: hidden;
+  background: #d9d4ca;
+}
+
+.founder-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 610px;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.founder-image-wrap:after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(20,30,25,.72));
+}
+
+.founder-image-label {
+  position: absolute;
+  z-index: 2;
+  left: 34px;
+  right: 25px;
+  bottom: 30px;
+  color: #fff;
+}
+
+.founder-image-label span {
+  display: block;
+  font: 700 10px/1 Arial, sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: .85;
+}
+
+.founder-image-label strong {
+  font: 500 43px/.9 "Cormorant Garamond", Georgia, serif;
+}
+
+.founder-story {
+  padding: 72px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.founder-number {
+  display: block;
+  color: #b4975a;
+  font: 400 20px/1 "Cormorant Garamond", Georgia, serif;
+  margin-bottom: 20px;
+}
+
+.founder-story .founder-role {
+  margin-bottom: 18px;
+}
+
+.founder-story h3,
+.josephine-copy h3 {
+  margin: 0 0 25px;
+  color: #4d594b;
+  font: 500 clamp(43px,4.5vw,64px)/.92 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.02em;
+}
+
+.founder-story h3 em,
+.josephine-copy h3 em {
+  color: #6b3039;
+  font-weight: 400;
+}
+
+.founder-story p,
+.josephine-copy p {
+  margin: 0 0 18px;
+  color: #73756d;
+  font: 400 15.5px/1.8 "Outfit", Arial, sans-serif;
+}
+
+.founder-rule {
+  width: 55px;
+  height: 2px;
+  background: #b4975a;
+  margin: 12px 0 22px;
+}
+
+.founder-quote {
+  color: #4d594b !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 24px !important;
+  line-height: 1.3 !important;
+}
+
+/* Josephine is presented as the visionary, with a cleaner editorial layout. */
+.founders-josephine {
+  display: grid;
+  grid-template-columns: minmax(320px,.85fr) minmax(360px,1.15fr);
+  min-height: 500px;
+  margin-top: 32px;
+  background: #fff;
+  border-top: 1px solid rgba(180,151,90,.35);
+  box-shadow: 0 20px 55px rgba(42,79,68,.08);
+}
+
+.josephine-photo {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  background: #e7e1d6;
+}
+
+.josephine-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.josephine-placeholder {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #687563;
+  background: #e7e1d6;
+  font: 500 42px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.josephine-copy {
+  padding: 70px 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.josephine-copy .founder-number {
+  color: #b4975a;
+}
+
+.josephine-copy .founder-role {
+  margin-bottom: 18px;
+}
+
+.josephine-copy h3 {
+  font-size: clamp(44px,4.3vw,62px);
+}
+
+.founders-closing {
+  display: none;
+}
+
+@media (max-width:850px) {
+  .founders-section {
+    padding: 85px 0;
+  }
+
+  .founders-feature,
+  .founders-josephine {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-image-wrap,
+  .founder-image-wrap img {
+    min-height: 470px;
+  }
+
+  .founder-story {
+    padding: 52px 38px;
+  }
+
+  .josephine-photo,
+  .josephine-photo img {
+    min-height: 420px;
+  }
+
+  .josephine-copy {
+    padding: 52px 38px;
+  }
+}
+
+@media (max-width:600px) {
+  .founders-intro {
+    margin-bottom: 38px;
+  }
+
+  .founders-intro h2 {
+    font-size: 56px;
+  }
+
+  .founder-image-wrap,
+  .founder-image-wrap img {
+    min-height: 400px;
+  }
+
+  .founder-story {
+    padding: 42px 25px;
+  }
+
+  .founder-story h3,
+  .josephine-copy h3 {
+    font-size: 44px;
+  }
+
+  .josephine-photo,
+  .josephine-photo img {
+    min-height: 340px;
+  }
+
+  .josephine-copy {
+    padding: 45px 25px;
+  }
+}
+
+/* =========================================================
+   HOMEPAGE MISSION — REFINED
+   ========================================================= */
+
+.home-mission {
+  --sage: #687563;
+  --sage-dark: #4d594b;
+  --burgundy: #6b3039;
+  --gold: #b4975a;
+  --cream: #f7f4ed;
+  --warm-white: #fcfbf8;
+  --muted: #73756d;
+
+  position: relative;
+  background: var(--warm-white);
+  padding: 125px 30px;
+  overflow: hidden;
+}
+
+.home-mission::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  top: -250px;
+  right: -180px;
+  background: rgba(180, 151, 90, 0.06);
+  pointer-events: none;
+}
+
+.home-mission-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  column-gap: 90px;
+  row-gap: 75px;
+  position: relative;
+}
+
+.home-mission-heading {
+  padding-top: 5px;
+}
+
+.home-mission-eyebrow {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  color: var(--burgundy);
+  margin-bottom: 20px;
+}
+
+.home-mission-heading h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(55px, 6vw, 78px);
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--sage-dark);
+}
+
+.home-mission-heading h2 em {
+  color: var(--burgundy);
+  font-weight: 400;
+}
+
+.home-mission-crown {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 260px;
+  margin-top: 32px;
+}
+
+.home-mission-crown span {
+  height: 1px;
+  flex: 1;
+  background: rgba(180, 151, 90, 0.55);
+}
+
+.home-mission-crown div {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  color: var(--gold);
+}
+
+.home-mission-content {
+  max-width: 600px;
+  padding-top: 35px;
+}
+
+.home-mission-content p {
+  margin: 0 0 24px;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.home-mission-content .home-mission-lead {
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--sage-dark);
+  margin-bottom: 28px;
+}
+
+.mission-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--gold);
+  text-decoration: none;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.mission-link:hover {
+  gap: 20px;
+  color: var(--sage-dark);
+}
+
+.mission-arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.home-mission-quote {
+  grid-column: 1 / -1;
+  position: relative;
+  background: var(--cream);
+  padding: 55px 90px 50px;
+  margin-top: 5px;
+  border-left: 3px solid var(--gold);
+  text-align: center;
+}
+
+.home-mission-quote .quote-mark {
+  position: absolute;
+  left: 38px;
+  top: 30px;
+  font-family: Georgia, serif;
+  font-size: 70px;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.55;
+}
+
+.home-mission-quote p {
+  max-width: 850px;
+  margin: 0 auto 28px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(29px, 3.2vw, 42px);
+  line-height: 1.25;
+  font-weight: 400;
+  color: var(--sage-dark);
+}
+
+.home-mission-quote .quote-line {
+  width: 45px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 17px;
+}
+
+.home-mission-quote > span {
+  font-family: "Outfit", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--burgundy);
+}
+
+.reveal-mission {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal-mission.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .home-mission {
+    padding: 90px 24px;
+  }
+
+  .home-mission-inner {
+    display: block;
+  }
+
+  .home-mission-heading {
+    margin-bottom: 45px;
+  }
+
+  .home-mission-heading h2 {
+    font-size: clamp(52px, 15vw, 70px);
+  }
+
+  .home-mission-crown {
+    width: 220px;
+    margin-top: 27px;
+  }
+
+  .home-mission-content {
+    padding-top: 0;
+    margin-bottom: 60px;
+  }
+
+  .home-mission-content .home-mission-lead {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .home-mission-quote {
+    padding: 48px 30px 42px;
+    margin-top: 0;
+  }
+
+  .home-mission-quote .quote-mark {
+    left: 15px;
+    top: 24px;
+    font-size: 52px;
+  }
+
+  .home-mission-quote p {
+    font-size: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-mission {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — SHARED NAV + FOUNDERS POLISH
+   ========================================================= */
+
+#shared-site-navigation .header {
+  background: rgba(252, 250, 246, 0.96);
+  border-bottom: 1px solid rgba(184, 149, 74, 0.16);
+  box-shadow: 0 8px 28px rgba(44, 42, 40, 0.05);
+  backdrop-filter: blur(14px);
+}
+
+#shared-site-navigation .navrow {
+  min-height: 82px;
+  gap: 24px;
+}
+
+#shared-site-navigation .brand {
+  flex-shrink: 0;
+}
+
+#shared-site-navigation .brand img {
+  width: auto;
+  height: 68px;
+  object-fit: contain;
+}
+
+#shared-site-navigation .desktop-nav {
+  gap: 2px;
+  margin-left: auto;
+}
+
+#shared-site-navigation .desktop-nav a {
+  position: relative;
+  padding: 12px 11px;
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: color .25s ease;
+}
+
+#shared-site-navigation .desktop-nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: calc(100% - 22px);
+  bottom: 5px;
+  height: 1px;
+  background: var(--gold);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform .25s ease;
+}
+
+#shared-site-navigation .desktop-nav a:hover,
+#shared-site-navigation .desktop-nav a.active {
+  color: var(--burgundy);
+}
+
+#shared-site-navigation .desktop-nav a:hover::after,
+#shared-site-navigation .desktop-nav a.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+#shared-site-navigation .btn-primary {
+  min-height: 45px;
+  padding: 0 20px;
+  border-radius: 5px;
+  background: var(--burgundy);
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px -12px rgba(116, 31, 61, .55);
+}
+
+#shared-site-navigation .btn-primary:hover {
+  background: var(--burgundy-deep);
+  transform: translateY(-1px);
+}
+
+#shared-site-navigation .mobile-toggle {
+  border-color: rgba(184, 149, 74, .35);
+  color: var(--burgundy);
+  background: var(--paper);
+}
+
+#shared-site-navigation .mobile-nav {
+  background: rgba(252, 250, 246, .98);
+}
+
+#shared-site-navigation .mobile-nav a {
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+#shared-site-navigation .mobile-nav a:hover,
+#shared-site-navigation .mobile-nav a.active {
+  color: var(--burgundy);
+}
+
+#shared-site-navigation .mobile-nav .nav-inquiry {
+  border-color: var(--sage-dark);
+}
+
+/* Founders: softer, card-like edges instead of hard rectangular blocks. */
+.founders-section {
+  overflow: hidden;
+}
+
+.founders-feature,
+.founders-josephine {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.founders-feature {
+  box-shadow: 0 18px 45px -28px rgba(44, 42, 40, .28);
+}
+
+.founders-josephine {
+  border: 1px solid rgba(184, 149, 74, .16);
+  box-shadow: 0 18px 45px -30px rgba(44, 42, 40, .20);
+}
+
+.josephine-photo,
+.founder-image-wrap {
+  overflow: hidden;
+}
+
+.josephine-photo img,
+.founder-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+  #shared-site-navigation .desktop-nav a {
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 10px;
+  }
+
+  #shared-site-navigation .desktop-nav a::after {
+    width: calc(100% - 14px);
+  }
+
+  #shared-site-navigation .navrow {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  #shared-site-navigation .desktop-nav {
+    display: none;
+  }
+
+  #shared-site-navigation .mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shared-site-navigation .navrow > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  #shared-site-navigation .navrow > div:last-child > .btn-primary {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 560px) {
+  #shared-site-navigation .navrow {
+    min-height: 74px;
+  }
+
+  #shared-site-navigation .brand img {
+    height: 58px;
+  }
+
+  #shared-site-navigation .navrow > div:last-child > .btn-primary {
+    display: none;
+  }
+
+  .founders-feature,
+  .founders-josephine {
+    border-radius: 18px;
+  }
+}
+
+
+/* =========================================================
+   SHARED NAVIGATION — STICKY WRAPPER FIX
+   The header is injected inside #shared-site-navigation. The wrapper
+   must be the sticky element so it remains pinned after scrolling.
+   ========================================================= */
+
+#shared-site-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+#shared-site-navigation .header {
+  position: relative;
+  top: auto;
+  z-index: 100;
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — SITE-WIDE INTERACTION POLISH
+   ========================================================= */
+:root { --dm-ease: cubic-bezier(.22, 1, .36, 1); }
+
+.card,.step,.quote-box,.founders-feature,.founders-josephine,.mission-highlight,.mission-link,.learn,.btn,.team-card,.roles .role,.areas li {
+  transition: transform .42s var(--dm-ease), box-shadow .42s var(--dm-ease), border-color .32s ease, background-color .32s ease, color .25s ease;
+}
+
+.service-grid .card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(42,79,68,.08);
+  box-shadow: 0 10px 30px -24px rgba(42,79,68,.35);
+}
+.service-grid .card::before {
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0; height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--burgundy));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .42s var(--dm-ease);
+}
+.service-grid .card:hover,.service-grid .card:focus-within {
+  transform:translateY(-7px);
+  border-color:rgba(184,149,74,.25);
+  box-shadow:0 22px 45px -25px rgba(42,79,68,.34);
+}
+.service-grid .card:hover::before,.service-grid .card:focus-within::before { transform:scaleX(1); }
+
+.service-grid .icon { position:relative; display:grid; place-items:center; min-height:74px; margin-bottom:8px; }
+.service-grid .icon img {
+  width:52px; height:52px; object-fit:contain;
+  transition:transform .45s var(--dm-ease),filter .3s ease;
+}
+.service-grid .card:hover .icon img,.service-grid .card:focus-within .icon img { transform:translateY(-3px) scale(1.08); }
+
+.service-grid .learn { display:inline-flex; align-items:center; gap:7px; position:relative; }
+.service-grid .learn::after {
+  content:""; position:absolute; left:0; right:0; bottom:-3px; height:1px;
+  background:var(--gold); transform:scaleX(0); transform-origin:left;
+  transition:transform .3s var(--dm-ease);
+}
+.service-grid .card:hover .learn::after,.service-grid .card:focus-within .learn::after { transform:scaleX(1); }
+
+.hero-image,.founder-image-wrap,.josephine-photo,.two-col > img,.final-bg { overflow:hidden; }
+.hero-image img,.founder-image-wrap img,.josephine-photo img,.two-col > img { transition:transform .9s var(--dm-ease); }
+.hero-image:hover img,.founder-image-wrap:hover img,.josephine-photo:hover img,.two-col:hover > img { transform:scale(1.035); }
+
+.founders-feature:hover,.founders-josephine:hover {
+  transform:translateY(-4px);
+  box-shadow:0 28px 65px -34px rgba(42,79,68,.28);
+}
+.home-mission-quote { transition:transform .45s var(--dm-ease),box-shadow .45s var(--dm-ease); }
+.home-mission-quote:hover { transform:translateY(-4px); box-shadow:0 22px 45px -30px rgba(42,79,68,.24); }
+
+.steps .step { position:relative; }
+.steps .step:hover { transform:translateY(-4px); }
+.steps .step .step-num { transition:color .3s ease,transform .4s var(--dm-ease); }
+.steps .step:hover .step-num { color:var(--burgundy); transform:translateX(3px); }
+
+.btn {
+  transition:transform .25s var(--dm-ease),box-shadow .25s ease,background-color .25s ease,border-color .25s ease,color .25s ease;
+}
+.btn:hover,.btn:focus-visible { transform:translateY(-2px); box-shadow:0 12px 26px -17px rgba(42,79,68,.45); }
+.btn:active { transform:translateY(0); }
+
+.text-link,.mission-link,.learn { transition:gap .3s var(--dm-ease),color .25s ease,border-color .25s ease; }
+.text-link:hover,.mission-link:hover { gap:14px; }
+
+#shared-site-navigation .header {
+  transition:background-color .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+#shared-site-navigation .header.scrolled { box-shadow:0 12px 32px -24px rgba(42,79,68,.45); }
+
+.dm-reveal {
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .72s ease,transform .72s var(--dm-ease);
+}
+.dm-reveal.dm-visible { opacity:1; transform:translateY(0); }
+.dm-reveal.dm-delay-1 { transition-delay:.06s; }
+.dm-reveal.dm-delay-2 { transition-delay:.12s; }
+.dm-reveal.dm-delay-3 { transition-delay:.18s; }
+.dm-reveal.dm-delay-4 { transition-delay:.24s; }
+
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+  }
+  .dm-reveal,.reveal,.reveal-mission { opacity:1 !important; transform:none !important; }
+}
+@media (max-width:700px) {
+  .service-grid .card:hover,.service-grid .card:focus-within,.founders-feature:hover,.founders-josephine:hover,.home-mission-quote:hover { transform:none; }
+}
+
+
+/* The uploaded SVGs are shape-matched monochrome artwork, so use the
+   brand palette as a color treatment while they are in their active state. */
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — FLOATING WHATSAPP BUTTON
+   ========================================================= */
+
+.dm-whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(20, 70, 45, .24);
+  transition: transform .28s var(--dm-ease), box-shadow .28s ease, width .35s var(--dm-ease), border-radius .35s var(--dm-ease);
+  animation: dm-whatsapp-bounce 4.8s ease-in-out infinite;
+}
+
+.dm-whatsapp-icon {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+}
+
+.dm-whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.dm-whatsapp-label {
+  position: absolute;
+  right: 67px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: var(--sage-dark);
+  color: #fff;
+  font: 600 11px/1 var(--sans);
+  letter-spacing: .05em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .3s var(--dm-ease);
+  box-shadow: 0 8px 22px rgba(42,79,68,.18);
+}
+
+.dm-whatsapp-label::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--sage-dark);
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 1px;
+}
+
+.dm-whatsapp-float:hover,
+.dm-whatsapp-float:focus-visible {
+  width: 66px;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(20, 70, 45, .30);
+  animation-play-state: paused;
+  outline: none;
+}
+
+.dm-whatsapp-float:hover .dm-whatsapp-label,
+.dm-whatsapp-float:focus-visible .dm-whatsapp-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.dm-whatsapp-pending {
+  cursor: default;
+  opacity: .88;
+}
+
+.dm-whatsapp-pending:hover,
+.dm-whatsapp-pending:focus-visible {
+  width: 60px;
+  transform: none;
+  box-shadow: 0 14px 30px rgba(20, 70, 45, .24);
+}
+
+.dm-whatsapp-pending .dm-whatsapp-label::before {
+  content: "Number needed";
+}
+
+.dm-whatsapp-pending .dm-whatsapp-label {
+  font-size: 0;
+}
+
+.dm-whatsapp-pending:hover .dm-whatsapp-label,
+.dm-whatsapp-pending:focus-visible .dm-whatsapp-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+@keyframes dm-whatsapp-bounce {
+  0%, 72%, 100% { transform: translateY(0); }
+  76% { transform: translateY(-7px); }
+  80% { transform: translateY(0); }
+  84% { transform: translateY(-4px); }
+  88% { transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .dm-whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .dm-whatsapp-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .dm-whatsapp-label {
+    display: none;
+  }
+
+  .dm-whatsapp-float:hover,
+  .dm-whatsapp-float:focus-visible,
+  .dm-whatsapp-pending:hover,
+  .dm-whatsapp-pending:focus-visible {
+    width: 56px;
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dm-whatsapp-float {
+    animation: none;
+  }
+}
+
+
+/* =========================================================
+   WHATSAPP — SIMPLE FLOATING BUTTON
+   No hover expansion. Gentle attention hop immediately, then
+   approximately every 5 seconds.
+   ========================================================= */
+
+a#dm-whatsapp-float.dm-whatsapp-float {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 2147483647 !important;
+
+  display: inline-flex !important;
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  max-width: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: none !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  cursor: pointer !important;
+
+  box-shadow: 0 5px 14px rgba(20, 70, 45, .18) !important;
+  animation: dm-whatsapp-attention 5s ease-in-out infinite !important;
+}
+
+a#dm-whatsapp-float.dm-whatsapp-float .dm-whatsapp-icon {
+  display: grid !important;
+  width: 31px !important;
+  height: 31px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  place-items: center !important;
+  flex: 0 0 31px !important;
+}
+
+a#dm-whatsapp-float.dm-whatsapp-float .dm-whatsapp-icon svg {
+  display: block !important;
+  width: 31px !important;
+  height: 31px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  fill: currentColor !important;
+}
+
+a#dm-whatsapp-float.dm-whatsapp-float .dm-whatsapp-label {
+  display: none !important;
+}
+
+/* Completely disable the old hover expansion. */
+a#dm-whatsapp-float.dm-whatsapp-float:hover,
+a#dm-whatsapp-float.dm-whatsapp-float:focus-visible {
+  width: 60px !important;
+  max-width: 60px !important;
+  height: 60px !important;
+  max-height: 60px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 5px 14px rgba(20, 70, 45, .18) !important;
+  animation-play-state: running !important;
+  outline: none !important;
+}
+
+a#dm-whatsapp-float.dm-whatsapp-pending {
+  cursor: default !important;
+}
+
+@keyframes dm-whatsapp-attention {
+  0%, 10%, 100% { transform: translateY(0); }
+  2% { transform: translateY(-9px); }
+  4% { transform: translateY(0); }
+  6% { transform: translateY(-5px); }
+  8% { transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  a#dm-whatsapp-float.dm-whatsapp-float {
+    right: 16px !important;
+    bottom: 16px !important;
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    max-width: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+  }
+
+  a#dm-whatsapp-float.dm-whatsapp-float:hover,
+  a#dm-whatsapp-float.dm-whatsapp-float:focus-visible {
+    width: 56px !important;
+    max-width: 56px !important;
+    height: 56px !important;
+    max-height: 56px !important;
+  }
+
+  a#dm-whatsapp-float.dm-whatsapp-float .dm-whatsapp-icon,
+  a#dm-whatsapp-float.dm-whatsapp-float .dm-whatsapp-icon svg {
+    width: 29px !important;
+    height: 29px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a#dm-whatsapp-float.dm-whatsapp-float {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — MOBILE HERO VISIBILITY
+   Mobile only: keep the new photo clearly visible while
+   preserving a clean, readable text area above it.
+   ========================================================= */
+@media (max-width: 700px) {
+  main > section.hero:first-of-type {
+    min-height: 760px !important;
+    height: 760px !important;
+    background: var(--cream) !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    top: 42% !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    height: 58% !important;
+    opacity: 1 !important;
+    z-index: 0 !important;
+  }
+
+  main > section.hero:first-of-type .hero-image img {
+    object-position: center center !important;
+    transform: none !important;
+  }
+
+  /* Keep the mobile image clean until the dedicated mobile image is added. */
+  main > section.hero:first-of-type .hero-image::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247,243,236,1) 0%,
+        rgba(247,243,236,.72) 10%,
+        rgba(247,243,236,.12) 30%,
+        rgba(247,243,236,0) 52%
+      ) !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy {
+    height: 100% !important;
+    min-height: 100% !important;
+    z-index: 2 !important;
+  }
+
+  main > section.hero:first-of-type h1 {
+    top: 20px !important;
+    font-size: clamp(42px, 12vw, 62px) !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow {
+    top: 150px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container > p {
+    top: 195px !important;
+    max-width: 500px !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 340px !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    top: 420px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy::after {
+    bottom: 18px !important;
+    z-index: 3 !important;
+    color: var(--burgundy) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type {
+    min-height: 700px !important;
+    height: 700px !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    top: 44% !important;
+    height: 56% !important;
+  }
+
+  main > section.hero:first-of-type h1 {
+    top: 18px !important;
+    font-size: clamp(40px, 12vw, 54px) !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow {
+    top: 137px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container > p {
+    top: 180px !important;
+    font-size: 15px !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 315px !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    top: 397px !important;
+  }
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — DESKTOP HERO FADE
+   Heavy fade on the left, gradually lighter toward the right,
+   with a subtle fade at the top and bottom.
+   ========================================================= */
+@media (min-width: 701px) {
+  main > section.hero:first-of-type .hero-image::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(247,243,236,.98) 0%,
+        rgba(247,243,236,.88) 18%,
+        rgba(247,243,236,.58) 40%,
+        rgba(247,243,236,.22) 62%,
+        rgba(247,243,236,.04) 82%,
+        rgba(247,243,236,0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(247,243,236,.28) 0%,
+        rgba(247,243,236,0) 24%,
+        rgba(247,243,236,0) 76%,
+        rgba(247,243,236,.28) 100%
+      ) !important;
+  }
+}
+
+
+/* =========================================================
+   DIVINE MOONLIGHT — HERO FINAL RESPONSIVE LAYOUT
+   Desktop keeps the editorial left-to-right fade.
+   Mobile follows: title → service area → paragraph →
+   side-by-side actions → action-focused photo → nursing pool.
+   ========================================================= */
+
+@media (min-width: 701px) {
+  main > section.hero:first-of-type .hero-image::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(247,243,236,1) 0%,
+        rgba(247,243,236,.97) 18%,
+        rgba(247,243,236,.88) 34%,
+        rgba(247,243,236,.62) 49%,
+        rgba(247,243,236,.30) 64%,
+        rgba(247,243,236,.08) 82%,
+        rgba(247,243,236,0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(247,243,236,.22) 0%,
+        rgba(247,243,236,0) 18%,
+        rgba(247,243,236,0) 82%,
+        rgba(247,243,236,.22) 100%
+      ) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  main > section.hero:first-of-type {
+    min-height: 900px !important;
+    height: 900px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container {
+    padding: 0 20px !important;
+  }
+
+  main > section.hero:first-of-type h1 {
+    top: 18px !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 0 12px !important;
+    font-size: clamp(43px, 12vw, 60px) !important;
+    line-height: .9 !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow {
+    top: 145px !important;
+    left: 20px !important;
+    right: 20px !important;
+    font-size: 10px !important;
+    letter-spacing: .11em !important;
+    text-align: center !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container > p {
+    top: 185px !important;
+    left: 20px !important;
+    right: 20px !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    font-size: 15.5px !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 335px !important;
+    left: 20px !important;
+    right: 20px !important;
+    width: auto !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    min-height: 50px !important;
+    padding: 0 14px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-secondary {
+    border: 1px solid rgba(42,79,68,.45) !important;
+    color: var(--sage-dark) !important;
+    background: rgba(247,243,236,.88) !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    display: none !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    top: 425px !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 350px !important;
+    z-index: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  main > section.hero:first-of-type .hero-image img {
+    object-position: center 42% !important;
+    transform: scale(1.06) !important;
+  }
+
+  main > section.hero:first-of-type .hero-image::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247,243,236,0) 0%,
+        rgba(247,243,236,0) 72%,
+        rgba(247,243,236,.72) 100%
+      ) !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy::after {
+    left: 20px !important;
+    right: 20px !important;
+    bottom: 28px !important;
+    padding: 14px 0 0 !important;
+    text-align: center !important;
+    border-top: 1px solid rgba(42,79,68,.22) !important;
+    font-size: 9px !important;
+    letter-spacing: .11em !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type {
+    min-height: 850px !important;
+    height: 850px !important;
+  }
+
+  main > section.hero:first-of-type h1 {
+    top: 16px !important;
+    font-size: clamp(40px, 12vw, 53px) !important;
+  }
+
+  main > section.hero:first-of-type .eyebrow {
+    top: 132px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy > .container > p {
+    top: 172px !important;
+    font-size: 15px !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 315px !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    top: 400px !important;
+    height: 325px !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy::after {
+    bottom: 24px !important;
+  }
+}
+
+
+/* =========================================================
+   HERO FINAL FIX — DESKTOP FADE / CTA / NURSING POOL
+   ========================================================= */
+
+/* Keep the photo underneath a single full-width fade layer. */
+main > section.hero:first-of-type .hero-image img {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+main > section.hero:first-of-type .hero-image::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+@media (min-width: 701px) {
+  main > section.hero:first-of-type .hero-image::after {
+    /* Solid cream through the left third, then a smooth transition
+       until the photograph is completely unobstructed in the right third. */
+    background: linear-gradient(
+      90deg,
+      rgba(247,243,236,1) 0%,
+      rgba(247,243,236,1) 33.333%,
+      rgba(247,243,236,.82) 43%,
+      rgba(247,243,236,.58) 52%,
+      rgba(247,243,236,.30) 61%,
+      rgba(247,243,236,.08) 70%,
+      rgba(247,243,236,0) 78%,
+      rgba(247,243,236,0) 100%
+    ) !important;
+  }
+
+  /* Show both desktop hero actions. */
+  main > section.hero:first-of-type .actions .btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 54px !important;
+    padding: 0 24px !important;
+    border: 1px solid rgba(42,79,68,.38) !important;
+    border-radius: 999px !important;
+    color: var(--sage-dark) !important;
+    background: rgba(247,243,236,.72) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-secondary:hover {
+    background: rgba(247,243,236,.94) !important;
+    border-color: var(--sage-dark) !important;
+  }
+}
+
+/* The nursing-pool hero label ends at CNA. */
+main > section.hero:first-of-type .hero-copy::after {
+  content: 'NURSING POOL   ·   RN · LPN · CNA' !important;
+}
+
+/* Mobile: Explore Our Services sits to the LEFT of Request Care. */
+@media (max-width: 700px) {
+  main > section.hero:first-of-type .actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-secondary {
+    display: inline-flex !important;
+    order: 1 !important;
+    flex: 1 1 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    min-height: 50px !important;
+    padding: 0 10px !important;
+    border: 1px solid rgba(42,79,68,.45) !important;
+    border-radius: 999px !important;
+    color: var(--sage-dark) !important;
+    background: rgba(247,243,236,.88) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-primary {
+    order: 2 !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 0 10px !important;
+    white-space: nowrap !important;
+  }
+}
+
+
+
+/* =========================================================
+   HERO CLEANUP — TEXT CTA + TRUE FULL-WIDTH DESKTOP FADE
+   ========================================================= */
+
+@media (min-width: 701px) {
+  /* Put the fade on the hero itself so it spans the entire viewport,
+     including the area currently occupied by the transparent copy layer. */
+  main > section.hero:first-of-type::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    background: linear-gradient(
+      90deg,
+      var(--cream) 0%,
+      var(--cream) 33.333%,
+      rgba(247,243,236,.88) 44%,
+      rgba(247,243,236,.62) 54%,
+      rgba(247,243,236,.34) 64%,
+      rgba(247,243,236,.12) 73%,
+      rgba(247,243,236,0) 82%,
+      rgba(247,243,236,0) 100%
+    ) !important;
+  }
+
+  main > section.hero:first-of-type .hero-copy {
+    z-index: 2 !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    z-index: 0 !important;
+  }
+
+  /* The image's own overlay must not compete with the full-hero fade. */
+  main > section.hero:first-of-type .hero-image::after {
+    background: none !important;
+  }
+
+  /* Explore is a simple text link below Request Care. */
+  main > section.hero:first-of-type .text-link {
+    position: absolute !important;
+    top: 430px !important;
+    left: 56px !important;
+    z-index: 4 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding-bottom: 5px !important;
+    color: var(--sage-dark) !important;
+    border-bottom: 1px solid rgba(42,79,68,.35) !important;
+    font-family: var(--sans) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+  }
+
+  main > section.hero:first-of-type .text-link:hover {
+    color: var(--burgundy) !important;
+    border-color: var(--burgundy) !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-secondary {
+    display: none !important;
+  }
+}
+
+/* Mobile: Request Care first, then the simple Explore Our Services link. */
+@media (max-width: 700px) {
+  main > section.hero:first-of-type .actions {
+    top: 335px !important;
+    left: 20px !important;
+    right: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-primary {
+    display: inline-flex !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    min-height: 50px !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-secondary {
+    display: none !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    position: absolute !important;
+    top: 402px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 4 !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding-bottom: 4px !important;
+    color: var(--sage-dark) !important;
+    border-bottom: 1px solid rgba(42,79,68,.3) !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type .actions {
+    top: 315px !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    top: 382px !important;
+  }
+}
+
+
+/* =========================================================
+   HERO STRUCTURE FIX — MOBILE SERVICE LINK + ROBUST DESKTOP FADE
+   ========================================================= */
+
+/* Use the hero-grid as the actual visual stacking surface.
+   This puts the fade above the photo but below all hero copy. */
+@media (min-width: 701px) {
+  main > section.hero:first-of-type .hero-grid::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+    display: block !important;
+    background: linear-gradient(
+      90deg,
+      var(--cream) 0%,
+      var(--cream) 33%,
+      rgba(247,243,236,.98) 42%,
+      rgba(247,243,236,.82) 50%,
+      rgba(247,243,236,.58) 58%,
+      rgba(247,243,236,.34) 66%,
+      rgba(247,243,236,.14) 75%,
+      rgba(247,243,236,0) 84%,
+      rgba(247,243,236,0) 100%
+    ) !important;
+  }
+
+  /* Keep every piece of hero copy above the fade. */
+  main > section.hero:first-of-type .hero-copy {
+    z-index: 4 !important;
+  }
+
+  main > section.hero:first-of-type h1,
+  main > section.hero:first-of-type .hero-copy::after {
+    z-index: 5 !important;
+  }
+
+  /* Disable every older image fade on desktop so there is only one. */
+  main > section.hero:first-of-type .hero-image::before,
+  main > section.hero:first-of-type .hero-image::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+/* Mobile: show the two CTAs as two distinct elements.
+   Request Care is the button; Explore Our Services is plain text. */
+@media (max-width: 700px) {
+  main > section.hero:first-of-type .hero-copy {
+    z-index: 4 !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    position: absolute !important;
+    top: 335px !important;
+    left: 20px !important;
+    right: 20px !important;
+    z-index: 6 !important;
+    width: auto !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-primary {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: min(100%, 360px) !important;
+    min-height: 50px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    position: absolute !important;
+    top: 405px !important;
+    left: 50% !important;
+    right: auto !important;
+    z-index: 7 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: max-content !important;
+    margin: 0 !important;
+    padding: 0 0 5px !important;
+    transform: translateX(-50%) !important;
+    color: var(--sage-dark) !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(42,79,68,.35) !important;
+    font-family: var(--sans) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+
+  /* Keep the mobile photo lower so the CTA area stays visually separate. */
+  main > section.hero:first-of-type .hero-image {
+    top: 455px !important;
+    bottom: 0 !important;
+    height: auto !important;
+    opacity: 1 !important;
+    z-index: 0 !important;
+  }
+
+  main > section.hero:first-of-type .hero-image::before {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background: linear-gradient(
+      180deg,
+      rgba(247,243,236,.12) 0%,
+      rgba(247,243,236,0) 100%
+    ) !important;
+  }
+
+  main > section.hero:first-of-type .hero-image::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type .actions {
+    top: 315px !important;
+  }
+
+  main > section.hero:first-of-type .text-link {
+    top: 385px !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    top: 435px !important;
+  }
+}
+
+
+/* =========================================================
+   HERO CTA STACK — STRUCTURAL FINAL FIX
+   ========================================================= */
+
+/* The two hero actions are one vertical stack.
+   This prevents the services link from being lost behind the photo. */
+main > section.hero:first-of-type .actions {
+  position: absolute !important;
+  top: 350px !important;
+  left: 56px !important;
+  z-index: 6 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+  margin: 0 !important;
+}
+
+main > section.hero:first-of-type .actions .btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+main > section.hero:first-of-type .actions .text-link {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: max-content !important;
+  margin: 0 !important;
+  padding: 0 0 5px !important;
+  transform: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(42,79,68,.35) !important;
+  color: var(--sage-dark) !important;
+  font-family: var(--sans) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+main > section.hero:first-of-type .actions .text-link:hover {
+  color: var(--burgundy) !important;
+  border-bottom-color: var(--burgundy) !important;
+}
+
+@media (max-width: 700px) {
+  main > section.hero:first-of-type .actions {
+    top: 335px !important;
+    left: 20px !important;
+    right: 20px !important;
+    width: auto !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-primary {
+    width: 100% !important;
+    max-width: 360px !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+  }
+
+  main > section.hero:first-of-type .actions .text-link {
+    position: static !important;
+    width: max-content !important;
+    margin: 0 !important;
+    transform: none !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type .actions {
+    top: 315px !important;
+  }
+}
+
+
+/* =========================================================
+   HERO FINAL POLISH — CTA ORDER + BOTTOM SECTION FADE
+   ========================================================= */
+
+/* Keep Request Care first and Explore Our Services directly below it. */
+main > section.hero:first-of-type .actions {
+  flex-direction: column !important;
+}
+
+main > section.hero:first-of-type .actions .btn-primary {
   order: 1 !important;
 }
 
@@ -9,15 +3571,849 @@ main > section.hero:first-of-type .actions .text-link {
   order: 2 !important;
 }
 
-main > section.hero:first-of-type .actions .btn-primary {
-  order: 3 !important;
+/* Softly fade the bottom of the hero image into the next section.
+   The horizontal desktop fade remains on .hero-grid::before. */
+@media (min-width: 701px) {
+  main > section.hero:first-of-type .hero-image::after {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    height: 24% !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(247,243,236,0) 0%,
+      rgba(247,243,236,.08) 18%,
+      rgba(247,243,236,.28) 42%,
+      rgba(247,243,236,.58) 68%,
+      var(--cream) 100%
+    ) !important;
+  }
 }
 
+
+/* =========================================================
+   MOBILE HERO — NURSING POOL POSITION
+   ========================================================= */
+@media (max-width: 700px) {
+  /* Keep the Nursing Pool label above the Request Care button. */
+  main > section.hero:first-of-type .hero-copy::after {
+    top: 0 !important;
+    bottom: auto !important;
+    left: 20px !important;
+    right: 20px !important;
+    padding: 0 !important;
+    border-top: 0 !important;
+    text-align: center !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    letter-spacing: .11em !important;
+    transform: translateY(-28px) !important;
+  }
+}
+
+
+/* MOBILE NURSING POOL — real element for reliable placement */
+.mobile-nursing-pool {
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 10 !important;
+  color: var(--burgundy) !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .14em !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  transition: color .2s ease, border-color .2s ease !important;
+}
 @media (min-width: 701px) {
   main > section.hero:first-of-type .actions .mobile-nursing-pool {
-    flex-basis: auto !important;
+    order: -1 !important;
+    flex-basis: 100% !important;
     margin: 0 0 2px !important;
     padding-bottom: 12px !important;
     border-bottom: 1px solid rgba(42,79,68,.18) !important;
   }
+}
+.mobile-nursing-pool:hover {
+  color: var(--sage-dark) !important;
+  border-color: rgba(42,79,68,.45) !important;
+}
+main > section.hero:first-of-type .hero-copy::after {
+  display: none !important;
+}
+@media (max-width: 700px) {
+  main > section.hero:first-of-type .mobile-nursing-pool {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 2px !important;
+    text-align: center !important;
+    color: var(--burgundy) !important;
+    font-family: var(--sans) !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: .11em !important;
+    text-transform: uppercase !important;
+  }
+  main > section.hero:first-of-type .hero-copy::after { display: none !important; }
+}
+
+
+/* =========================================================
+   MOBILE HERO — REFINED CTA + IMAGE SPACING
+   ========================================================= */
+@media (max-width: 700px) {
+  main > section.hero:first-of-type {
+    min-height: 960px !important;
+    height: 960px !important;
+    overflow: hidden !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 330px !important;
+    left: 20px !important;
+    right: 20px !important;
+    gap: 15px !important;
+    align-items: center !important;
+    z-index: 8 !important;
+  }
+
+  main > section.hero:first-of-type .mobile-nursing-pool {
+    position: relative !important;
+    display: block !important;
+    width: auto !important;
+    margin: 0 0 2px !important;
+    padding: 0 0 11px !important;
+    color: var(--burgundy) !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: .16em !important;
+    line-height: 1.3 !important;
+  }
+
+  main > section.hero:first-of-type .mobile-nursing-pool::after {
+    content: '' !important;
+    display: block !important;
+    width: 34px !important;
+    height: 1px !important;
+    margin: 10px auto 0 !important;
+    background: var(--gold) !important;
+  }
+
+  main > section.hero:first-of-type .actions .btn-primary {
+    width: min(100%, 360px) !important;
+    min-height: 54px !important;
+    border-radius: 999px !important;
+    box-shadow: 0 14px 30px -18px rgba(90,24,48,.65) !important;
+  }
+
+  main > section.hero:first-of-type .actions .text-link {
+    margin-top: 1px !important;
+    padding: 0 0 5px !important;
+    color: var(--sage-dark) !important;
+    border-bottom: 1px solid rgba(42,79,68,.28) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Keep the photo completely below the CTA area. */
+  main > section.hero:first-of-type .hero-image {
+    top: 505px !important;
+    bottom: auto !important;
+    height: 455px !important;
+    z-index: 0 !important;
+  }
+
+  main > section.hero:first-of-type .hero-image img {
+    object-position: center 42% !important;
+    transform: scale(1.04) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main > section.hero:first-of-type {
+    min-height: 920px !important;
+    height: 920px !important;
+  }
+
+  main > section.hero:first-of-type .actions {
+    top: 305px !important;
+  }
+
+  main > section.hero:first-of-type .mobile-nursing-pool {
+    font-size: 8.5px !important;
+    letter-spacing: .14em !important;
+  }
+
+  main > section.hero:first-of-type .hero-image {
+    top: 475px !important;
+    height: 445px !important;
+  }
+}
+
+
+/* =========================================================
+   SHARED INJECTED FOOTER
+   ========================================================= */
+
+.footer {
+  background: var(--sage-dark);
+  color: var(--sage-mist);
+  padding: 70px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr 1fr;
+  gap: 45px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.footer-brand img {
+  display: block;
+  width: 178px;
+  height: auto;
+  max-height: 92px;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.footer-description {
+  margin: 18px 0 0;
+  max-width: 310px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--sage-soft);
+}
+
+.footer-tagline {
+  margin: 16px 0 0;
+  color: var(--gold-soft);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+.footer-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.footer a {
+  color: var(--sage-mist);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  color: var(--paper);
+}
+
+.footer-contact {
+  gap: 10px !important;
+}
+
+.footer-service-note {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--sage-soft);
+}
+
+.copyright {
+  border-top: 1px solid rgba(215, 230, 223, .18);
+  margin-top: 45px;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--sage-soft);
+}
+
+@media (max-width: 1000px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 55px 0 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-brand img {
+    width: 165px;
+  }
+
+  .copyright {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 35px;
+  }
+}
+
+
+/* Contact page */
+.contact-page {
+  padding: 110px 0 90px;
+  min-height: 62vh;
+}
+.contact-page .section-head {
+  max-width: 700px;
+  margin-bottom: 42px;
+}
+.contact-page .section-head h1 {
+  margin-bottom: 16px;
+}
+.contact-page .section-head p {
+  max-width: 620px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-card {
+  padding: 28px;
+  border: 1px solid rgba(42, 79, 68, 0.14);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.58);
+}
+.contact-card .eyebrow {
+  margin-bottom: 10px;
+}
+.contact-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+}
+.contact-card p {
+  margin: 0;
+  line-height: 1.7;
+}
+.contact-card a {
+  color: inherit;
+  text-decoration: none;
+}
+.contact-card a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .contact-page {
+    padding: 80px 0 65px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Service Areas page */
+.service-area-page {
+  padding: 105px 0 90px;
+  min-height: 65vh;
+}
+
+.service-area-intro {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.service-area-intro .eyebrow {
+  margin-bottom: 10px;
+}
+
+.service-area-intro h1 {
+  margin: 0 0 16px;
+}
+
+.service-area-intro p {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.service-area-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, .65fr);
+  gap: 30px;
+  align-items: stretch;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.service-area-map-wrap {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(42,79,68,.14);
+  border-radius: 18px;
+  background: #e9eee9;
+}
+
+.service-area-map {
+  width: 100%;
+  height: 520px;
+}
+
+.service-area-map .leaflet-control-zoom a {
+  color: var(--sage-dark);
+}
+
+.service-area-map .leaflet-popup-content-wrapper,
+.service-area-map .leaflet-popup-tip {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.service-area-tooltip {
+  border: 0;
+  border-radius: 5px;
+  padding: 7px 10px;
+  background: var(--cream);
+  color: var(--sage-dark);
+  box-shadow: 0 5px 18px rgba(42,79,68,.16);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.service-area-tooltip:before {
+  display: none;
+}
+
+.map-note {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 500;
+  padding: 8px 11px;
+  border-radius: 5px;
+  background: rgba(247,243,236,.92);
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 11px;
+  box-shadow: 0 4px 16px rgba(42,79,68,.12);
+}
+
+.service-area-info {
+  align-self: center;
+  padding: 16px 8px;
+}
+
+.service-area-info h2 {
+  margin: 10px 0 22px;
+  font-family: var(--display);
+  font-size: clamp(34px, 3vw, 48px);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--sage-dark);
+}
+
+.service-area-list {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(42,79,68,.16);
+}
+
+.service-area-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(42,79,68,.16);
+  color: var(--sage-dark);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.service-area-info p {
+  margin: 0 0 25px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .service-area-page {
+    padding: 80px 0 65px;
+  }
+
+  .service-area-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-area-map {
+    height: 460px;
+  }
+
+  .service-area-info {
+    padding: 8px 4px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-area-map {
+    height: 390px;
+  }
+
+  .service-area-map-wrap {
+    border-radius: 14px;
+  }
+
+  .map-note {
+    font-size: 10px;
+  }
+}
+
+
+
+/* =========================================================
+   SHARED MOBILE NAV + SCROLL REVEALS
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .mobile-nav nav > a.nav-action-link {
+    display: block;
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 13px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(221, 214, 203, 0.7);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--sage-dark);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .mobile-nav nav > a.nav-action-link:hover {
+    background: transparent;
+    color: var(--burgundy);
+  }
+}
+
+/* Give anchored service sections room below the fixed/sticky header. */
+.service-detail[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Elements marked for reveal remain visible by default. JavaScript
+   adds .reveal-ready before hiding them, so content never depends
+   on an animation script to be readable. */
+.reveal-ready .site-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .65s ease,
+    transform .65s ease;
+}
+
+.reveal-ready .site-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-ready .site-reveal:nth-child(2) {
+  transition-delay: .06s;
+}
+
+.reveal-ready .site-reveal:nth-child(3) {
+  transition-delay: .12s;
+}
+
+.reveal-ready .site-reveal:nth-child(4) {
+  transition-delay: .18s;
+}
+
+.reveal-ready .site-reveal:nth-child(5) {
+  transition-delay: .24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .site-reveal,
+  .reveal-ready .site-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* Contact phone — keep the number aligned with the site's clean sans-serif typography. */
+.contact-card .contact-phone {
+  font-family: var(--sans);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+/* Service-area list links */
+.service-area-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.service-area-list li a {
+  color: var(--burgundy);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.service-area-list li a:hover {
+  color: var(--sage-dark);
+}
+
+
+/* =========================================================
+   SERVICE AREAS — MAP IMAGE PRESENTATION
+   ========================================================= */
+
+.service-area-page {
+  padding: 118px 0 105px;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(168,200,189,.16), transparent 28%),
+    var(--cream);
+}
+
+.service-area-intro {
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.service-area-intro .eyebrow {
+  color: var(--burgundy);
+  font-weight: 600;
+  letter-spacing: .18em;
+}
+
+.service-area-intro h1 {
+  margin: 9px 0 16px;
+  color: var(--sage-dark);
+  font-family: var(--display);
+  font-size: clamp(52px, 6vw, 78px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.service-area-intro p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.service-area-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, .72fr);
+  gap: clamp(34px, 5vw, 72px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.service-area-map-wrap {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(42,79,68,.12);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 0 24px 60px rgba(42,79,68,.10);
+}
+
+.service-area-map-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 0;
+  background: var(--paper);
+}
+
+.service-area-map-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(247,243,236,0) 72%, rgba(247,243,236,.18) 100%);
+}
+
+.service-area-map-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 570px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.map-image-label {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 2;
+  padding: 9px 13px;
+  border: 1px solid rgba(42,79,68,.12);
+  border-radius: 999px;
+  background: rgba(247,243,236,.92);
+  color: var(--sage-dark);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(42,79,68,.10);
+}
+
+.service-area-info {
+  align-self: center;
+  padding: 8px 0;
+}
+
+.service-area-info > .eyebrow {
+  color: var(--burgundy);
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+
+.service-area-info h2 {
+  margin: 10px 0 17px;
+  color: var(--sage-dark);
+  font-family: var(--display);
+  font-size: clamp(40px, 4vw, 58px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.025em;
+}
+
+.service-area-summary {
+  margin: 0 0 22px !important;
+  color: var(--ink) !important;
+  font-size: 15px;
+  line-height: 1.7 !important;
+}
+
+.service-area-list {
+  margin: 0 0 25px;
+  border-top: 1px solid rgba(42,79,68,.15);
+}
+
+.service-area-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(42,79,68,.15);
+  color: var(--sage-dark);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.service-area-list li span::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin: 0 11px 1px 1px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(193,157,75,.10);
+}
+
+.service-area-list li a {
+  transition: color .2s ease, transform .2s ease;
+}
+
+.service-area-list li a:hover {
+  transform: translateX(2px);
+}
+
+.service-area-info > p:not(.service-area-summary) {
+  max-width: 390px;
+  margin: 0 0 25px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.service-area-info .btn {
+  min-height: 50px;
+  padding: 0 25px;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(90,24,48,.14);
+}
+
+@media (max-width: 850px) {
+  .service-area-page { padding: 88px 0 72px; }
+  .service-area-intro { margin-bottom: 38px; }
+  .service-area-layout { grid-template-columns: 1fr; gap: 38px; }
+  .service-area-map-wrap { border-radius: 20px; }
+  .service-area-map-image img { max-height: none; }
+  .service-area-info { padding: 0 4px; }
+}
+
+@media (max-width: 500px) {
+  .service-area-page { padding: 72px 0 60px; }
+  .service-area-intro { margin-bottom: 30px; }
+  .service-area-intro h1 { font-size: clamp(48px, 15vw, 64px); }
+  .service-area-intro p { font-size: 15px; line-height: 1.7; }
+  .service-area-map-wrap { border-radius: 16px; box-shadow: 0 16px 36px rgba(42,79,68,.09); }
+  .map-image-label { left: 13px; bottom: 13px; padding: 8px 10px; font-size: 9px; }
+  .service-area-info h2 { font-size: 43px; }
+}
+
+
+/* HERO CTA ORDER — FINAL: Nursing Pool → Explore Our Services → Request Care */
+main > section.hero:first-of-type .actions { flex-direction: column !important; }
+main > section.hero:first-of-type .actions .mobile-nursing-pool { order: 1 !important; }
+main > section.hero:first-of-type .actions .text-link { order: 2 !important; }
+main > section.hero:first-of-type .actions .btn-primary { order: 3 !important; }
+@media (min-width: 701px) {
+  main > section.hero:first-of-type .actions .mobile-nursing-pool { flex-basis: auto !important; }
 }
