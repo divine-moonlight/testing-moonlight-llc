@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Service Areas | Divine Moonlight Home Service LLC</title>
+  <meta name="description" content="Divine Moonlight Home Service LLC serves Wake, Durham, and Orange Counties in North Carolina.">
+  <meta name="theme-color" content="#2A4F44">
+  <link href="favicon.svg" rel="icon">
+  <link href="styles.css" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIINfQ3IYk5kP0m4k9mQ2r4fM5M6p6r6f7M="
+    crossorigin=""
+  >
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to main content</a>
+
+  <main id="main-content">
+    <section class="service-area-page">
+      <div class="container">
+        <div class="service-area-intro">
+          <div class="eyebrow">Where we serve</div>
+          <h1>Service Areas</h1>
+          <p>
+            Divine Moonlight Home Service LLC provides compassionate in-home support
+            throughout Wake, Durham, and Orange Counties.
+          </p>
+        </div>
+
+        <div class="service-area-layout">
+          <div class="service-area-map-wrap">
+            <div id="service-area-map" class="service-area-map" aria-label="Interactive map showing Divine Moonlight service areas"></div>
+            <div class="map-note">Drag to explore · Scroll or use the controls to zoom</div>
+          </div>
+
+          <aside class="service-area-info">
+            <div class="eyebrow">Our service area</div>
+            <h2>Serving the Triangle</h2>
+            <ul class="service-area-list">
+              <li><span>Wake County</span></li>
+              <li><span>Durham County</span></li>
+              <li><span>Orange County</span></li>
+            </ul>
+            <p>
+              If you are near the edge of our service area, contact us to discuss
+              your location and care needs.
+            </p>
+            <a class="btn btn-primary" href="contact.html">Contact Us</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="shared-site-footer"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <script>
+    (function () {
+      const mapElement = document.getElementById("service-area-map");
+      if (!mapElement || typeof L === "undefined") return;
+
+      const map = L.map(mapElement, {
+        scrollWheelZoom: true,
+        zoomControl: true,
+        attributionControl: true
+      });
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+      }).addTo(map);
+
+      const countyUrl =
+        "https://services.gis.nc.gov/secure/rest/services/ImageryProject/CO20_Summary/MapServer/0/query" +
+        "?where=county%20in%20(%27Wake%27,%27Durham%27,%27Orange%27)" +
+        "&outFields=county,fips" +
+        "&returnGeometry=true" +
+        "&outSR=4326" +
+        "&f=geojson";
+
+      fetch(countyUrl)
+        .then(response => {
+          if (!response.ok) throw new Error("County boundary request failed.");
+          return response.json();
+        })
+        .then(data => {
+          const layer = L.geoJSON(data, {
+            style: {
+              color: "#5A1830",
+              weight: 2.5,
+              fillColor: "#A8B9A7",
+              fillOpacity: 0.38
+            },
+            onEachFeature: function (feature, countyLayer) {
+              const name = feature.properties && feature.properties.county
+                ? feature.properties.county + " County"
+                : "Service Area";
+
+              countyLayer.bindTooltip(name, {
+                sticky: true,
+                direction: "center",
+                className: "service-area-tooltip"
+              });
+
+              countyLayer.bindPopup(
+                "<strong>" + name + "</strong><br>Divine Moonlight service area"
+              );
+            }
+          }).addTo(map);
+
+          map.fitBounds(layer.getBounds(), {
+            padding: [28, 28]
+          });
+        })
+        .catch(() => {
+          map.setView([35.82, -78.75], 9);
+        });
+    })();
+  </script>
+  <script src="nav.js"></script>
+  <script src="footer.js"></script>
+</body>
+</html>
