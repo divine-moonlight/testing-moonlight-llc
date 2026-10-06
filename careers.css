@@ -800,21 +800,40 @@
 }
 
 .careers-page .position-list {
-  border-top: 0;
+  border-top: 1px solid var(--careers-line);
+  margin: 0;
 }
 
 .careers-page .position-card {
+  position: relative;
+  min-height: 196px;
   padding: 48px 0;
+  background: transparent;
+  border-bottom: 1px solid var(--careers-line);
+  box-sizing: border-box;
+}
+
+.careers-page .position-card > div {
+  min-width: 0;
 }
 
 .careers-page .position-card:hover {
-  background: transparent;
+  background: rgba(42, 79, 68, .045);
+}
+
+.careers-page .position-card:hover .position-apply {
+  color: #fffdf8;
+  background: var(--careers-sage);
+}
+
+.careers-page .position-apply {
+  align-self: center;
 }
 
 .careers-page .featured-position {
   margin: 0;
-  padding: 48px 30px;
-  background: #edf1ec;
+  padding: 48px 0;
+  background: transparent;
 }
 
 .careers-page .application-note {
