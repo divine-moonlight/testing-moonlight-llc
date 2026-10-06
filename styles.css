@@ -4072,3 +4072,42 @@ main > section.hero:first-of-type .actions .text-link {
     font-size: 10px;
   }
 }
+
+
+/* Mobile navigation: keep action links visually consistent with the menu. */
+@media (max-width: 700px) {
+  .mobile-nav nav > a.btn,
+  .mobile-nav nav > a.btn.btn-primary,
+  .mobile-nav nav > a.btn.btn-secondary,
+  .mobile-nav nav > a.nav-inquiry {
+    display: block;
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 12px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--sage-dark);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .mobile-nav nav > a.btn:hover,
+  .mobile-nav nav > a.btn.btn-primary:hover,
+  .mobile-nav nav > a.btn.btn-secondary:hover,
+  .mobile-nav nav > a.nav-inquiry:hover {
+    background: transparent;
+    color: var(--burgundy);
+  }
+
+  .mobile-nav nav > a.btn.btn-primary::after,
+  .mobile-nav nav > a.btn.btn-secondary::after {
+    content: none;
+  }
+}
