@@ -4151,3 +4151,33 @@ main > section.hero:first-of-type .actions .text-link {
     transition: none;
   }
 }
+
+
+/* Contact phone — keep the number aligned with the site's clean sans-serif typography. */
+.contact-card .contact-phone {
+  font-family: var(--sans);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+/* Service-area list links */
+.service-area-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.service-area-list li a {
+  color: var(--burgundy);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.service-area-list li a:hover {
+  color: var(--sage-dark);
+}
