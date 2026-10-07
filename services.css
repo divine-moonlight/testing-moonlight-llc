@@ -86,10 +86,68 @@
   background: var(--services-cream);
 }
 
-.services-heading {
-  max-width: 760px;
+.services-top {
+  display: grid;
+  grid-template-columns: minmax(0, .78fr) minmax(460px, 1.22fr);
+  gap: 70px;
+  align-items: start;
   margin-bottom: 58px;
 }
+
+.services-heading {
+  max-width: 620px;
+  margin-bottom: 0;
+  padding-top: 14px;
+}
+
+.care-settings {
+  position: relative;
+  padding: 34px 34px 30px;
+  border: 1px solid rgba(42,79,68,.13);
+  border-radius: 4px;
+  background: radial-gradient(circle at 100% 0%, rgba(163,122,66,.10), transparent 34%), var(--services-paper);
+  box-shadow: 0 18px 45px rgba(42,79,68,.07);
+  overflow: hidden;
+}
+
+.care-settings::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 3px;
+  background: var(--services-gold);
+}
+
+.care-settings-header { margin-bottom: 24px; }
+.care-settings-eyebrow { color: var(--services-burgundy); font-size: 9px; font-weight: 700; letter-spacing: .18em; }
+.care-settings-header h3 { margin: 7px 0 0; color: var(--services-sage); font-family: var(--display); font-size: clamp(29px, 3vw, 39px); font-weight: 500; line-height: .98; letter-spacing: -.03em; }
+.care-settings-header h3 em { color: var(--services-burgundy); font-weight: 400; }
+
+.care-settings-hospital {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 22px;
+  padding: 18px;
+  border: 1px solid rgba(107,36,59,.13);
+  background: rgba(247,243,236,.62);
+}
+
+.care-setting-icon { width: 36px; height: 36px; display: grid; place-items: center; flex: 0 0 36px; font-size: 21px; line-height: 1; }
+.care-settings-hospital h4 { margin: 2px 0 9px; color: var(--services-sage); font-family: var(--display); font-size: 23px; font-weight: 500; line-height: 1.1; }
+.hospital-list { display: flex; flex-wrap: wrap; gap: 7px 9px; }
+.hospital-list span { display: inline-flex; padding: 5px 9px; border: 1px solid rgba(42,79,68,.12); border-radius: 999px; color: var(--services-sage-mid); background: rgba(255,253,248,.72); font-size: 11px; line-height: 1.2; }
+
+.care-settings-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--services-line); }
+.care-setting { display: flex; align-items: center; gap: 9px; min-height: 51px; padding: 9px 7px 9px 0; border-bottom: 1px solid var(--services-line); color: var(--services-sage-mid); font-size: 12px; line-height: 1.35; }
+.care-setting:nth-child(odd) { padding-right: 14px; border-right: 1px solid var(--services-line); }
+.care-setting:nth-child(even) { padding-left: 14px; }
+.care-setting .care-setting-icon { width: 27px; height: 27px; flex-basis: 27px; font-size: 17px; }
+.care-setting span:last-child { transition: color .25s ease; }
+.care-setting:hover span:last-child { color: var(--services-burgundy); }
 
 .services-heading .eyebrow,
 .service-kicker {
@@ -254,6 +312,9 @@
   .services-hero, .services-hero-content { min-height: 570px; }
   .services-hero-content { padding: 110px 30px 70px; }
   .services-hero-overlay { background: linear-gradient(90deg, rgba(247,243,236,.97) 0%, rgba(247,243,236,.88) 55%, rgba(247,243,236,.3) 100%); }
+  .services-top { grid-template-columns: 1fr; gap: 45px; }
+  .services-heading { max-width: 760px; }
+  .care-settings { max-width: 760px; }
   .services-intro-grid { grid-template-columns: 1fr; gap: 35px; }
   .service-detail {
     grid-template-columns: 42px 52px minmax(0, 1fr);
@@ -276,7 +337,14 @@
   .services-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
   .services-intro { padding-top: 78px; padding-bottom: 78px; }
   .services-intro-grid { grid-template-columns: 1fr; gap: 28px; }
-  .services-heading { margin-bottom: 40px; }
+  .services-top { gap: 35px; margin-bottom: 40px; }
+  .services-heading { margin-bottom: 0; padding-top: 0; }
+  .care-settings { padding: 27px 20px 22px; }
+  .care-settings-header { margin-bottom: 20px; }
+  .care-settings-header h3 { font-size: 32px; }
+  .care-settings-grid { grid-template-columns: 1fr; }
+  .care-setting, .care-setting:nth-child(odd), .care-setting:nth-child(even) { padding: 9px 0; border-right: 0; }
+  .services-heading { margin-bottom: 0; }
   .service-detail,
   .service-detail.service-featured {
     grid-template-columns: 1fr;
